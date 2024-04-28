@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		46258A812BDEF97500ED962A /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46258A802BDEF97500ED962A /* InputView.swift */; };
+		46258A832BDF086000ED962A /* FirebaseConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46258A822BDF086000ED962A /* FirebaseConstants.swift */; };
 		466C6F822BDEEBB00051364F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C6F812BDEEBB00051364F /* LoginViewModel.swift */; };
 		466C6F842BDEEC170051364F /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C6F832BDEEC170051364F /* FirebaseManager.swift */; };
 		466C6F862BDEEC9D0051364F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C6F852BDEEC9D0051364F /* User.swift */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		46258A802BDEF97500ED962A /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		46258A822BDF086000ED962A /* FirebaseConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConstants.swift; sourceTree = "<group>"; };
 		466C6F812BDEEBB00051364F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		466C6F832BDEEC170051364F /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		466C6F852BDEEC9D0051364F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				466C6F852BDEEC9D0051364F /* User.swift */,
+				46258A822BDF086000ED962A /* FirebaseConstants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				466C6F8B2BDEEDD30051364F /* UserManager.swift in Sources */,
 				466DE5C82BDBD6220062D837 /* ContentView.swift in Sources */,
 				466C6F892BDEEDAD0051364F /* AuthFormProtocol.swift in Sources */,
+				46258A832BDF086000ED962A /* FirebaseConstants.swift in Sources */,
 				46258A812BDEF97500ED962A /* InputView.swift in Sources */,
 				466C6F862BDEEC9D0051364F /* User.swift in Sources */,
 				466DE5C62BDBD6220062D837 /* PeppyApp.swift in Sources */,
