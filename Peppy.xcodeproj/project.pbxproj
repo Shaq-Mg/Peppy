@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		466C6F822BDEEBB00051364F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C6F812BDEEBB00051364F /* LoginViewModel.swift */; };
+		466C6F842BDEEC170051364F /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C6F832BDEEC170051364F /* FirebaseManager.swift */; };
+		466C6F862BDEEC9D0051364F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C6F852BDEEC9D0051364F /* User.swift */; };
 		466DE5C62BDBD6220062D837 /* PeppyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466DE5C52BDBD6220062D837 /* PeppyApp.swift */; };
 		466DE5C82BDBD6220062D837 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466DE5C72BDBD6220062D837 /* ContentView.swift */; };
 		466DE5CA2BDBD6230062D837 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 466DE5C92BDBD6230062D837 /* Assets.xcassets */; };
@@ -40,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		466C6F812BDEEBB00051364F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		466C6F832BDEEC170051364F /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		466C6F852BDEEC9D0051364F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		466DE5C22BDBD6220062D837 /* Peppy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Peppy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		466DE5C52BDBD6220062D837 /* PeppyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeppyApp.swift; sourceTree = "<group>"; };
 		466DE5C72BDBD6220062D837 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -164,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				466DE6012BDBD83B0062D837 /* Firebase */,
+				466C6F812BDEEBB00051364F /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -171,6 +178,7 @@
 		466DE6012BDBD83B0062D837 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
+				466C6F832BDEEC170051364F /* FirebaseManager.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -178,6 +186,7 @@
 		466DE6022BDBD84B0062D837 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				466C6F852BDEEC9D0051364F /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -337,7 +346,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				466C6F822BDEEBB00051364F /* LoginViewModel.swift in Sources */,
+				466C6F842BDEEC170051364F /* FirebaseManager.swift in Sources */,
 				466DE5C82BDBD6220062D837 /* ContentView.swift in Sources */,
+				466C6F862BDEEC9D0051364F /* User.swift in Sources */,
 				466DE5C62BDBD6220062D837 /* PeppyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

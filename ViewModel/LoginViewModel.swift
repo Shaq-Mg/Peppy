@@ -1,0 +1,91 @@
+//
+//  LoginViewModel.swift
+//  Peppy
+//
+//  Created by Shaquille McGregor on 28/04/2024.
+//
+
+import SwiftUI
+import Firebase
+import FirebaseFirestore
+import FirebaseFirestoreSwift
+import FirebaseAuth
+import PhotosUI
+
+class LoginViewModel: ObservableObject {
+    @Published var loginStatus = ""
+    @Published var loginStatusMessage = ""
+    @Published var isLoginMode = false
+    
+    @Published var email = ""
+    @Published var username = ""
+    @Published var photoURL = ""
+    @Published var password = ""
+    @Published var confirmPassword = ""
+    
+    @Published private(set) var selectedImage: UIImage? = nil
+    @Published var imageSelection: PhotosPickerItem? = nil {
+        didSet {
+            persistImageToStorage()
+        }
+    }
+    
+    @Published var chatUser: User?
+    
+    init() { }
+    
+    func handleAction() {
+        if isLoginMode {
+            loginUser()
+            print("Should log into Firebaae with existing credentials")
+        } else {
+            createNewAccount()
+        }
+    }
+    
+    private func loginUser() {
+        FirebaseManager.shared.auth.signIn(withEmail: email, password: password) {
+            result, error in
+            if let error = error {
+                print("Failed to login user:", error)
+                self.loginStatusMessage = "Failed to login user: \(error)"
+                return
+            }
+            print("Successfully logged in as user: \(result?.user.uid ?? "")")
+            self.loginStatusMessage = "Successfully logged in as user: \(result?.user.uid ?? "")"
+        }
+    }
+    
+    private func createNewAccount() {
+        FirebaseManager.shared.auth.createUser(withEmail: email, password: password) {
+            result, error in
+            if let error = error {
+                print("Failed to create user:", error)
+                self.loginStatusMessage = "Failed to create user: \(error)"
+                return
+            }
+            print("Successfully created user: \(result?.user.uid ?? "")")
+            self.loginStatusMessage = "Successfully created user: \(result?.user.uid ?? "")"
+        }
+    }
+    private func persistImageToStorage() {
+        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
+        let ref = FirebaseManager.shared.storage.reference(withPath: uid)
+        guard let imageData = self.selectedImage?.jpegData(compressionQuality: 0.5) else { return }
+        ref.putData(imageData,metadata: nil) { metaData, error in
+            if let error = error {
+                self.loginStatusMessage = "Failed to push image to Storage: \(error)"
+                return
+            }
+            ref.downloadURL { url, error in
+                if let error = error {
+                    self.loginStatusMessage = "Failed to retrieve downloadURL: \(error)"
+                    return
+                }
+                self.loginStatusMessage = "Successfully stored image with url: \(url?.absoluteString ?? "")"
+                return
+            }
+        }
+    }
+}
+
