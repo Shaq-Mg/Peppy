@@ -10,6 +10,8 @@
 		466C6F822BDEEBB00051364F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C6F812BDEEBB00051364F /* LoginViewModel.swift */; };
 		466C6F842BDEEC170051364F /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C6F832BDEEC170051364F /* FirebaseManager.swift */; };
 		466C6F862BDEEC9D0051364F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C6F852BDEEC9D0051364F /* User.swift */; };
+		466C6F892BDEEDAD0051364F /* AuthFormProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C6F882BDEEDAD0051364F /* AuthFormProtocol.swift */; };
+		466C6F8B2BDEEDD30051364F /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C6F8A2BDEEDD30051364F /* UserManager.swift */; };
 		466DE5C62BDBD6220062D837 /* PeppyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466DE5C52BDBD6220062D837 /* PeppyApp.swift */; };
 		466DE5C82BDBD6220062D837 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466DE5C72BDBD6220062D837 /* ContentView.swift */; };
 		466DE5CA2BDBD6230062D837 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 466DE5C92BDBD6230062D837 /* Assets.xcassets */; };
@@ -46,6 +48,8 @@
 		466C6F812BDEEBB00051364F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		466C6F832BDEEC170051364F /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		466C6F852BDEEC9D0051364F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		466C6F882BDEEDAD0051364F /* AuthFormProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFormProtocol.swift; sourceTree = "<group>"; };
+		466C6F8A2BDEEDD30051364F /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		466DE5C22BDBD6220062D837 /* Peppy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Peppy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		466DE5C52BDBD6220062D837 /* PeppyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeppyApp.swift; sourceTree = "<group>"; };
 		466DE5C72BDBD6220062D837 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -89,9 +93,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		466C6F872BDEED880051364F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				466DE5C52BDBD6220062D837 /* PeppyApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		466DE5B92BDBD6220062D837 = {
 			isa = PBXGroup;
 			children = (
+				466C6F872BDEED880051364F /* App */,
 				466DE6022BDBD84B0062D837 /* Model */,
 				466DE6002BDBD8270062D837 /* ViewModel */,
 				466DE5FF2BDBD81E0062D837 /* Views */,
@@ -116,7 +129,6 @@
 		466DE5C42BDBD6220062D837 /* Peppy */ = {
 			isa = PBXGroup;
 			children = (
-				466DE5C52BDBD6220062D837 /* PeppyApp.swift */,
 				466DE5EF2BDBD7060062D837 /* GoogleService-Info.plist */,
 				466DE5C72BDBD6220062D837 /* ContentView.swift */,
 				466DE5C92BDBD6230062D837 /* Assets.xcassets */,
@@ -178,7 +190,9 @@
 		466DE6012BDBD83B0062D837 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
+				466C6F882BDEEDAD0051364F /* AuthFormProtocol.swift */,
 				466C6F832BDEEC170051364F /* FirebaseManager.swift */,
+				466C6F8A2BDEEDD30051364F /* UserManager.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -348,7 +362,9 @@
 			files = (
 				466C6F822BDEEBB00051364F /* LoginViewModel.swift in Sources */,
 				466C6F842BDEEC170051364F /* FirebaseManager.swift in Sources */,
+				466C6F8B2BDEEDD30051364F /* UserManager.swift in Sources */,
 				466DE5C82BDBD6220062D837 /* ContentView.swift in Sources */,
+				466C6F892BDEEDAD0051364F /* AuthFormProtocol.swift in Sources */,
 				466C6F862BDEEC9D0051364F /* User.swift in Sources */,
 				466DE5C62BDBD6220062D837 /* PeppyApp.swift in Sources */,
 			);

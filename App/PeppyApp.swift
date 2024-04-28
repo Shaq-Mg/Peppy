@@ -19,9 +19,11 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct PeppyApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @StateObject var viewModel = LoginViewModel()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(viewModel)
         }
     }
 }
