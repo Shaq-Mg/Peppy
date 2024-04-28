@@ -30,7 +30,7 @@ struct LoginView: View {
             .frame(maxWidth: .infinity)
             .frame(height: 50)
             .background(formIsValid ? .black : .gray.opacity(0.5))
-            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .clipShape(RoundedRectangle(cornerRadius: 20))
             .disabled(formIsValid)
             
             Text(viewModel.loginStatusMessage)
