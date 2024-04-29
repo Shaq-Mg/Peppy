@@ -14,13 +14,17 @@
 		46258A8A2BDF0BC100ED962A /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46258A892BDF0BC100ED962A /* RootView.swift */; };
 		465BDB922BDFBEF800D8647A /* MainMessageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465BDB912BDFBEF800D8647A /* MainMessageVM.swift */; };
 		465BDB942BDFBF5000D8647A /* RecentMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465BDB932BDFBF5000D8647A /* RecentMessage.swift */; };
+		465BDB972BDFC04600D8647A /* NewMessageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465BDB962BDFC04600D8647A /* NewMessageButton.swift */; };
+		465BDB992BDFC17E00D8647A /* MainMessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465BDB982BDFC17E00D8647A /* MainMessagesView.swift */; };
+		465BDB9C2BDFC1A900D8647A /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 465BDB9B2BDFC1A900D8647A /* SDWebImageSwiftUI */; };
+		465BDB9E2BDFC20700D8647A /* NewMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465BDB9D2BDFC20700D8647A /* NewMessageView.swift */; };
+		465BDBA02BDFC24E00D8647A /* NewMessageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465BDB9F2BDFC24E00D8647A /* NewMessageVM.swift */; };
 		466C6F822BDEEBB00051364F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C6F812BDEEBB00051364F /* LoginViewModel.swift */; };
 		466C6F842BDEEC170051364F /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C6F832BDEEC170051364F /* FirebaseManager.swift */; };
 		466C6F862BDEEC9D0051364F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C6F852BDEEC9D0051364F /* User.swift */; };
 		466C6F892BDEEDAD0051364F /* AuthFormProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C6F882BDEEDAD0051364F /* AuthFormProtocol.swift */; };
 		466C6F8B2BDEEDD30051364F /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C6F8A2BDEEDD30051364F /* UserManager.swift */; };
 		466DE5C62BDBD6220062D837 /* PeppyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466DE5C52BDBD6220062D837 /* PeppyApp.swift */; };
-		466DE5C82BDBD6220062D837 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466DE5C72BDBD6220062D837 /* ContentView.swift */; };
 		466DE5CA2BDBD6230062D837 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 466DE5C92BDBD6230062D837 /* Assets.xcassets */; };
 		466DE5CD2BDBD6230062D837 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 466DE5CC2BDBD6230062D837 /* Preview Assets.xcassets */; };
 		466DE5D72BDBD6230062D837 /* PeppyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466DE5D62BDBD6230062D837 /* PeppyTests.swift */; };
@@ -59,6 +63,10 @@
 		46258A892BDF0BC100ED962A /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		465BDB912BDFBEF800D8647A /* MainMessageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMessageVM.swift; sourceTree = "<group>"; };
 		465BDB932BDFBF5000D8647A /* RecentMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMessage.swift; sourceTree = "<group>"; };
+		465BDB962BDFC04600D8647A /* NewMessageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageButton.swift; sourceTree = "<group>"; };
+		465BDB982BDFC17E00D8647A /* MainMessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMessagesView.swift; sourceTree = "<group>"; };
+		465BDB9D2BDFC20700D8647A /* NewMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageView.swift; sourceTree = "<group>"; };
+		465BDB9F2BDFC24E00D8647A /* NewMessageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageVM.swift; sourceTree = "<group>"; };
 		466C6F812BDEEBB00051364F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		466C6F832BDEEC170051364F /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		466C6F852BDEEC9D0051364F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -66,7 +74,6 @@
 		466C6F8A2BDEEDD30051364F /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		466DE5C22BDBD6220062D837 /* Peppy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Peppy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		466DE5C52BDBD6220062D837 /* PeppyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeppyApp.swift; sourceTree = "<group>"; };
-		466DE5C72BDBD6220062D837 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		466DE5C92BDBD6230062D837 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		466DE5CC2BDBD6230062D837 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		466DE5D22BDBD6230062D837 /* PeppyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeppyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				465BDB9C2BDFC1A900D8647A /* SDWebImageSwiftUI in Frameworks */,
 				466DE5FA2BDBD7F50062D837 /* FirebaseFirestore in Frameworks */,
 				466DE5F82BDBD7ED0062D837 /* FirebaseAuth in Frameworks */,
 				466DE5F32BDBD7400062D837 /* FirebaseAnalytics in Frameworks */,
@@ -111,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				46258A802BDEF97500ED962A /* InputView.swift */,
+				465BDB9D2BDFC20700D8647A /* NewMessageView.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -118,6 +127,7 @@
 		46258A842BDF097600ED962A /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
+				465BDB962BDFC04600D8647A /* NewMessageButton.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -126,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				465BDB912BDFBEF800D8647A /* MainMessageVM.swift */,
+				465BDB9F2BDFC24E00D8647A /* NewMessageVM.swift */,
 			);
 			path = ChatVM;
 			sourceTree = "<group>";
@@ -210,7 +221,6 @@
 		466DE5FF2BDBD81E0062D837 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				466DE5C72BDBD6220062D837 /* ContentView.swift */,
 				466DE6042BDBD86F0062D837 /* Chat */,
 				466DE6032BDBD8570062D837 /* Login */,
 			);
@@ -260,6 +270,7 @@
 		466DE6042BDBD86F0062D837 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				465BDB982BDFC17E00D8647A /* MainMessagesView.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -286,6 +297,7 @@
 				466DE5F92BDBD7F50062D837 /* FirebaseFirestore */,
 				466DE5FB2BDBD80B0062D837 /* FirebaseFirestoreSwift */,
 				466DE5FD2BDBD8140062D837 /* FirebaseStorage */,
+				465BDB9B2BDFC1A900D8647A /* SDWebImageSwiftUI */,
 			);
 			productName = Peppy;
 			productReference = 466DE5C22BDBD6220062D837 /* Peppy.app */;
@@ -361,6 +373,7 @@
 			mainGroup = 466DE5B92BDBD6220062D837;
 			packageReferences = (
 				466DE5F12BDBD7400062D837 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				465BDB9A2BDFC1A900D8647A /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 466DE5C32BDBD6220062D837 /* Products */;
 			projectDirPath = "";
@@ -408,14 +421,17 @@
 				465BDB942BDFBF5000D8647A /* RecentMessage.swift in Sources */,
 				465BDB922BDFBEF800D8647A /* MainMessageVM.swift in Sources */,
 				46258A882BDF0A1800ED962A /* RegistrationView.swift in Sources */,
+				465BDBA02BDFC24E00D8647A /* NewMessageVM.swift in Sources */,
 				466C6F822BDEEBB00051364F /* LoginViewModel.swift in Sources */,
 				466C6F842BDEEC170051364F /* FirebaseManager.swift in Sources */,
+				465BDB992BDFC17E00D8647A /* MainMessagesView.swift in Sources */,
 				466C6F8B2BDEEDD30051364F /* UserManager.swift in Sources */,
-				466DE5C82BDBD6220062D837 /* ContentView.swift in Sources */,
 				466C6F892BDEEDAD0051364F /* AuthFormProtocol.swift in Sources */,
 				46258A832BDF086000ED962A /* FirebaseConstants.swift in Sources */,
+				465BDB9E2BDFC20700D8647A /* NewMessageView.swift in Sources */,
 				46258A812BDEF97500ED962A /* InputView.swift in Sources */,
 				46258A8A2BDF0BC100ED962A /* RootView.swift in Sources */,
+				465BDB972BDFC04600D8647A /* NewMessageButton.swift in Sources */,
 				466C6F862BDEEC9D0051364F /* User.swift in Sources */,
 				46258A862BDF09BF00ED962A /* LoginView.swift in Sources */,
 				466DE5C62BDBD6220062D837 /* PeppyApp.swift in Sources */,
@@ -745,6 +761,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		465BDB9A2BDFC1A900D8647A /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		466DE5F12BDBD7400062D837 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -756,6 +780,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		465BDB9B2BDFC1A900D8647A /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 465BDB9A2BDFC1A900D8647A /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
 		466DE5F22BDBD7400062D837 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 466DE5F12BDBD7400062D837 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
