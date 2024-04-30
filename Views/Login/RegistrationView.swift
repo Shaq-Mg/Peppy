@@ -18,7 +18,7 @@ struct RegistrationView: View {
             VStack(spacing: 8) {
                 InputView(text: $viewModel.username, title: "Username", placeholder: "Username")
                 
-                InputView(text: $viewModel.email, title: "Email Address", placeholder: "example@gmail.com")
+                InputView(text: $viewModel.phone, title: "Phone Number", placeholder: "example@gmail.com")
                 
                 InputView(text: $viewModel.password, title: "Password", placeholder: "Password", isSecureField: true)
                 
@@ -58,8 +58,8 @@ struct RegistrationView: View {
 }
 extension RegistrationView: AuthFormProtocol {
     var formIsValid: Bool {
-        return !viewModel.email.isEmpty
-        && viewModel.email.contains("@")
+        return !viewModel.phone.isEmpty
+        && viewModel.phone.count == 11
         && !viewModel.username.isEmpty
         && viewModel.username.count > 3
         && !viewModel.password.isEmpty

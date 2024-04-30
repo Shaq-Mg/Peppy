@@ -17,7 +17,7 @@ class LoginViewModel: ObservableObject {
     @Published var loginStatusMessage = ""
     @Published var isLoginMode = false
     
-    @Published var email = ""
+    @Published var phone = ""
     @Published var username = ""
     @Published var photoURL = ""
     @Published var password = ""
@@ -44,7 +44,7 @@ class LoginViewModel: ObservableObject {
     }
     
     private func loginUser() {
-        FirebaseManager.shared.auth.signIn(withEmail: email, password: password) {
+        FirebaseManager.shared.auth.signIn(withEmail: phone, password: password) {
             result, error in
             if let error = error {
                 print("Failed to login user:", error)
@@ -57,7 +57,7 @@ class LoginViewModel: ObservableObject {
     }
     
     private func createNewAccount() {
-        FirebaseManager.shared.auth.createUser(withEmail: email, password: password) {
+        FirebaseManager.shared.auth.createUser(withEmail: phone, password: password) {
             result, error in
             if let error = error {
                 print("Failed to create user:", error)

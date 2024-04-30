@@ -15,7 +15,7 @@ struct LoginView: View {
         VStack(spacing: 20) {
             VStack(spacing: 8) {
                 
-                InputView(text: $viewModel.email, title: "Email Address", placeholder: "example@gmail.com")
+                InputView(text: $viewModel.phone, title: "Phone Number", placeholder: "example@gmail.com")
                 
                 InputView(text: $viewModel.password, title: "Password", placeholder: "password", isSecureField: true)
             }
@@ -39,8 +39,8 @@ struct LoginView: View {
 }
 extension LoginView: AuthFormProtocol {
     var formIsValid: Bool {
-        return !viewModel.email.isEmpty
-        && viewModel.email.contains("@")
+        return !viewModel.phone.isEmpty
+        && viewModel.phone.count == 11
         && !viewModel.password.isEmpty
         && viewModel.password.count > 5
     }
