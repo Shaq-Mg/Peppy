@@ -15,7 +15,7 @@ struct LoginView: View {
         VStack(spacing: 20) {
             VStack(spacing: 8) {
                 
-                InputView(text: $viewModel.phone, title: "Phone Number", placeholder: "example@gmail.com")
+                InputView(text: $viewModel.phone, title: "Phone Number", placeholder: "+44 *********")
                 
                 InputView(text: $viewModel.password, title: "Password", placeholder: "password", isSecureField: true)
             }

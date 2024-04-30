@@ -18,7 +18,7 @@ struct RegistrationView: View {
             VStack(spacing: 8) {
                 InputView(text: $viewModel.username, title: "Username", placeholder: "Username")
                 
-                InputView(text: $viewModel.phone, title: "Phone Number", placeholder: "example@gmail.com")
+                InputView(text: $viewModel.phone, title: "Phone Number", placeholder: "+44 *********")
                 
                 InputView(text: $viewModel.password, title: "Password", placeholder: "Password", isSecureField: true)
                 

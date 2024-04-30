@@ -9,7 +9,7 @@ import Foundation
 
 struct FirebaseConstants {
     static let uid = "uid"
-    static let email = "email"
+    static let phone = "phone"
     static let username = "username"
     static let photoImageURL = "photoImageURL"
     static let fromId = "fromId"
