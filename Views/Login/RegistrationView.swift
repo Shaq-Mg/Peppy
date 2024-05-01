@@ -13,7 +13,6 @@ struct RegistrationView: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            PhotoPickerView()
             
             VStack(spacing: 8) {
                 InputView(text: $viewModel.username, title: "Username", placeholder: "Username")
@@ -71,32 +70,5 @@ struct RegistrationView_Previews: PreviewProvider {
     static var previews: some View {
         RegistrationView()
             .environmentObject(LoginViewModel())
-    }
-}
-
-struct PhotoPickerView: View {
-    @EnvironmentObject var viewModel: LoginViewModel
-    var body: some View {
-        PhotosPicker(selection: $viewModel.imageSelection) {
-            VStack {
-                if let image = viewModel.selectedImage {
-                    Image(uiImage: image)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 100, height: 100)
-                        .cornerRadius(50)
-                } else {
-                    VStack {
-                        Image(systemName: "person.fill")
-                            .font(.system(size: 60))
-                            .foregroundStyle(.black)
-                        Text("Upload photo")
-                            .font(.caption)
-                            .fontWeight(.semibold)
-                            .foregroundStyle(.black)
-                    }
-                }
-            }
-        }
     }
 }

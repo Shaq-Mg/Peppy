@@ -12,6 +12,7 @@
 		46258A862BDF09BF00ED962A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46258A852BDF09BF00ED962A /* LoginView.swift */; };
 		46258A882BDF0A1800ED962A /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46258A872BDF0A1800ED962A /* RegistrationView.swift */; };
 		46258A8A2BDF0BC100ED962A /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46258A892BDF0BC100ED962A /* RootView.swift */; };
+		4642EF412BE2492100BE88D4 /* PhotoPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4642EF402BE2492100BE88D4 /* PhotoPickerView.swift */; };
 		465686782BE11CAB0024DA47 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465686772BE11CAB0024DA47 /* ChatMessage.swift */; };
 		4656867E2BE11DEA0024DA47 /* MessagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4656867D2BE11DEA0024DA47 /* MessagesViewModel.swift */; };
 		465686842BE123AC0024DA47 /* ChatLogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465686832BE123AC0024DA47 /* ChatLogViewModel.swift */; };
@@ -64,6 +65,7 @@
 		46258A852BDF09BF00ED962A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		46258A872BDF0A1800ED962A /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		46258A892BDF0BC100ED962A /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		4642EF402BE2492100BE88D4 /* PhotoPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerView.swift; sourceTree = "<group>"; };
 		465686772BE11CAB0024DA47 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
 		4656867D2BE11DEA0024DA47 /* MessagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewModel.swift; sourceTree = "<group>"; };
 		465686832BE123AC0024DA47 /* ChatLogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogViewModel.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				46258A802BDEF97500ED962A /* InputView.swift */,
+				4642EF402BE2492100BE88D4 /* PhotoPickerView.swift */,
 				465BDB9D2BDFC20700D8647A /* NewMessageView.swift */,
 			);
 			path = UIComponents;
@@ -446,6 +449,7 @@
 				465BDB972BDFC04600D8647A /* NewMessageButton.swift in Sources */,
 				466C6F862BDEEC9D0051364F /* User.swift in Sources */,
 				46258A862BDF09BF00ED962A /* LoginView.swift in Sources */,
+				4642EF412BE2492100BE88D4 /* PhotoPickerView.swift in Sources */,
 				466DE5C62BDBD6220062D837 /* PeppyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
