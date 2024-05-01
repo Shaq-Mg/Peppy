@@ -13,6 +13,8 @@
 		46258A882BDF0A1800ED962A /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46258A872BDF0A1800ED962A /* RegistrationView.swift */; };
 		46258A8A2BDF0BC100ED962A /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46258A892BDF0BC100ED962A /* RootView.swift */; };
 		4642EF412BE2492100BE88D4 /* PhotoPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4642EF402BE2492100BE88D4 /* PhotoPickerView.swift */; };
+		4642EF432BE24A7F00BE88D4 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4642EF422BE24A7F00BE88D4 /* MessageView.swift */; };
+		4642EF452BE24AFC00BE88D4 /* ChatLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4642EF442BE24AFC00BE88D4 /* ChatLogView.swift */; };
 		465686782BE11CAB0024DA47 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465686772BE11CAB0024DA47 /* ChatMessage.swift */; };
 		4656867E2BE11DEA0024DA47 /* MessagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4656867D2BE11DEA0024DA47 /* MessagesViewModel.swift */; };
 		465686842BE123AC0024DA47 /* ChatLogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465686832BE123AC0024DA47 /* ChatLogViewModel.swift */; };
@@ -66,6 +68,8 @@
 		46258A872BDF0A1800ED962A /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		46258A892BDF0BC100ED962A /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		4642EF402BE2492100BE88D4 /* PhotoPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerView.swift; sourceTree = "<group>"; };
+		4642EF422BE24A7F00BE88D4 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		4642EF442BE24AFC00BE88D4 /* ChatLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogView.swift; sourceTree = "<group>"; };
 		465686772BE11CAB0024DA47 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
 		4656867D2BE11DEA0024DA47 /* MessagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewModel.swift; sourceTree = "<group>"; };
 		465686832BE123AC0024DA47 /* ChatLogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogViewModel.swift; sourceTree = "<group>"; };
@@ -282,7 +286,9 @@
 		466DE6042BDBD86F0062D837 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				4642EF442BE24AFC00BE88D4 /* ChatLogView.swift */,
 				465BDB982BDFC17E00D8647A /* MainMessagesView.swift */,
+				4642EF422BE24A7F00BE88D4 /* MessageView.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -431,6 +437,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				465BDB942BDFBF5000D8647A /* RecentMessage.swift in Sources */,
+				4642EF452BE24AFC00BE88D4 /* ChatLogView.swift in Sources */,
 				465BDB922BDFBEF800D8647A /* MainMessageVM.swift in Sources */,
 				46258A882BDF0A1800ED962A /* RegistrationView.swift in Sources */,
 				465BDBA02BDFC24E00D8647A /* NewMessageVM.swift in Sources */,
@@ -448,6 +455,7 @@
 				46258A8A2BDF0BC100ED962A /* RootView.swift in Sources */,
 				465BDB972BDFC04600D8647A /* NewMessageButton.swift in Sources */,
 				466C6F862BDEEC9D0051364F /* User.swift in Sources */,
+				4642EF432BE24A7F00BE88D4 /* MessageView.swift in Sources */,
 				46258A862BDF09BF00ED962A /* LoginView.swift in Sources */,
 				4642EF412BE2492100BE88D4 /* PhotoPickerView.swift in Sources */,
 				466DE5C62BDBD6220062D837 /* PeppyApp.swift in Sources */,

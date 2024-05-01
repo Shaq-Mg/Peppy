@@ -2,9 +2,8 @@
 //  ChatLogView.swift
 //  Peppy
 //
-//  Created by Shaquille McGregor on 30/04/2024.
+//  Created by Shaquille McGregor on 01/05/2024.
 //
-
 import SwiftUI
 import SDWebImageSwiftUI
 import Firebase
@@ -26,23 +25,24 @@ struct ChatLogView: View {
             chatDisplayBar
         }
         .navigationTitle(vm.chatUser?.username ?? "username")
-        .navigationBarItems(trailing: chatNavBar)
+        .navigationBarItems(leading: imageNavBar)
         .navigationBarTitleDisplayMode(.inline)
     }
     
-    private var chatNavBar: some View {
-        HStack(spacing: 16) {
-            WebImage(url: URL(string: vm.chatUser?.photoImageUrl ?? ""))
-                .resizable()
-                .scaledToFill()
-                .frame(width: 36, height: 36)
-                .clipped()
-                .presentationCornerRadius(36)
-                .overlay(RoundedRectangle(cornerRadius: 36).stroke(Color(.label), lineWidth: 1))
-                .shadow(radius: 5)
-            
-            Text(vm.chatUser?.username ?? "user")
-                .font(.system(size: 24, weight: .bold))
+    private var imageNavBar: some View {
+        VStack(spacing: 16) {
+            Button {
+                
+            } label: {
+                WebImage(url: URL(string: vm.chatUser?.photoImageUrl ?? ""))
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 40, height: 40)
+                    .clipped()
+                    .presentationCornerRadius(36)
+                    .overlay(RoundedRectangle(cornerRadius: 36).stroke(Color(.label), lineWidth: 1))
+                    .shadow(radius: 5)
+            }
         }
     }
     private var chatView: some View {
@@ -99,8 +99,7 @@ struct ChatLogView: View {
 struct ChatLogView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            ChatLogView(chatUser: ChatUser(data: .init()))
+            ChatLogView(chatUser: User(data: .init()))
         }
     }
 }
-
