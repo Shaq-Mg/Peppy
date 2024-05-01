@@ -26,6 +26,7 @@ struct ChatLogView: View {
         }
         .navigationTitle(vm.chatUser?.username ?? "username")
         .navigationBarItems(leading: imageNavBar)
+        .navigationBarItems(trailing: phoneNavBuuton)
         .navigationBarTitleDisplayMode(.inline)
     }
     
@@ -42,6 +43,19 @@ struct ChatLogView: View {
                     .presentationCornerRadius(36)
                     .overlay(RoundedRectangle(cornerRadius: 36).stroke(Color(.label), lineWidth: 1))
                     .shadow(radius: 5)
+            }
+        }
+    }
+    private var phoneNavBuuton: some View {
+        VStack(spacing: 16) {
+            Button {
+                
+            } label: {
+                Image(systemName: "phone.fill")
+                    .foregroundStyle(.mint)
+                    .frame(width: 40, height: 40)
+                    .background(.white)
+                    .clipShape(Circle())
             }
         }
     }
@@ -76,21 +90,25 @@ struct ChatLogView: View {
                     .font(.system(size: 24))
                     .foregroundStyle(Color(.systemGray))
             }
-            
-            TextEditor(text: $vm.chatText)
-                .padding(.leading)
-                .frame(height: 50)
-                .frame(maxWidth: .infinity)
-                .overlay(RoundedRectangle(cornerRadius: 8).stroke(lineWidth: 1).opacity(0.4))
-
-            Button {
-                vm.handleSend()
-            } label: {
-                Text("Send")
-                    .foregroundStyle(.mint)
-                    .fontWeight(.semibold)
+            HStack {
+                TextField("Desciption", text: $vm.chatText)
+                    .frame(maxWidth: .infinity)
+                    .padding(.leading)
+                
+                Button {
+                    vm.handleSend()
+                } label: {
+                    Image(systemName: "paperplane")
+                        .foregroundStyle(.mint)
+                        .fontWeight(.semibold)
+                }
             }
+            .padding()
+            .background(Color(.systemGray).opacity(0.1))
+            .frame(height: 40)
+            .clipShape(RoundedRectangle(cornerRadius: 20))
         }
+        .font(.system(size: 25))
         .padding(.horizontal)
         .padding(.vertical, 8)
     }
