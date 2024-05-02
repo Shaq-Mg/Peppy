@@ -16,6 +16,7 @@ class LoginViewModel: ObservableObject {
     @Published var loginStatus = ""
     @Published var loginStatusMessage = ""
     @Published var isLoginMode = false
+    @Published var errorMessage = ""
     
     @Published var phone = ""
     @Published var username = ""
@@ -32,7 +33,11 @@ class LoginViewModel: ObservableObject {
     
     @Published var chatUser: User?
     
-    init() { }
+    init() {        DispatchQueue.main.async {
+        self.isLoginMode =
+        FirebaseManager.shared.auth.currentUser?.uid == nil
+    }
+    }
     
     func handleAction() {
         if isLoginMode {
@@ -53,6 +58,7 @@ class LoginViewModel: ObservableObject {
             }
             print("Successfully logged in as user: \(result?.user.uid ?? "")")
             self.loginStatusMessage = "Successfully logged in as user: \(result?.user.uid ?? "")"
+            
         }
     }
     
@@ -102,4 +108,3 @@ class LoginViewModel: ObservableObject {
         }
     }
 }
-

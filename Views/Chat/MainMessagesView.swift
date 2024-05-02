@@ -25,7 +25,7 @@ struct MainMessagesView: View {
         }
         .fullScreenCover(isPresented: $vm.showNewMessageScreen) {
             NewMessageView(selectedUser: { user in
-                vm.shouldNavigateToChatView.toggle()
+                vm.showNewMessageScreen.toggle()
                 vm.chatUser = user
             })
         }

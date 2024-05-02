@@ -18,22 +18,19 @@ class MessagesViewModel: ObservableObject {
     @Published var shouldNavigateToChatView = false
     @Published var isUserCurrentlyLoggedOut = false
     
-    
     init() {
         DispatchQueue.main.async {
             self.isUserCurrentlyLoggedOut =
             FirebaseManager.shared.auth.currentUser?.uid == nil
         }
         fetchCurrentUser()
+        
         fetchRecentMessages()
     }
     
     private func fetchRecentMessages() {
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
-        FirebaseManager.shared.firestore
-            .collection("recent_messages")
-            .document(uid)
-            .collection("messages")
+        FirebaseManager.shared.firestore.collection("recent_messages").document(uid).collection("messages")
             .addSnapshotListener { querySnapshot, error in
                 if let error = error {
                     self.errorMessage = "Failed to listen for recent messages: \(error)"
@@ -57,29 +54,22 @@ class MessagesViewModel: ObservableObject {
                 })
             }
     }
-    
     func fetchCurrentUser() {
-        guard let uid =
-                FirebaseManager.shared.auth.currentUser?.uid else {
+        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else {
             self.errorMessage = "Could not find firebase uid"
             return
-            
         }
-        FirebaseManager.shared.firestore
-            .collection("users")
-            .document(uid)
-            .getDocument { snapshot, error in
-                if let error = error {
-                    self.errorMessage = "Failed to fetch current user: \(error)"
-                    return
-                }
-                guard let data = snapshot?.data() else {
-                    self.errorMessage = "No data found"
-                    return
-                }
-                
-                self.chatUser = .init(data: data)
-                
+        
+        FirebaseManager.shared.firestore.collection("users").document(uid).getDocument { snapshot, error in
+            if let error = error {
+                self.errorMessage = "Failed to fetch current user: \(error)"
+                return
             }
+            guard let data = snapshot?.data() else {
+                self.errorMessage = "No data found"
+                return
+            }
+            self.chatUser = .init(data: data)
+        }
     }
 }

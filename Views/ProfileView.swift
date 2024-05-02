@@ -10,13 +10,91 @@ import SwiftUI
 struct ProfileView: View {
     @EnvironmentObject var vm: LoginViewModel
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        if let user = vm.chatUser {
+            List {
+                ProfileHeader()
+                
+                AccountInfoSection()
+                Button {
+                    vm.isLoginMode.toggle()
+                } label: {
+                    Text("Sign Out")
+                        .font(.headline)
+                }
+                Button {
+                    
+                } label: {
+                    Text("Delete Acount")
+                        .font(.headline)
+                }
+            }
+            .navigationTitle("My Account")
+            .navigationBarItems(trailing: NavigationLink(destination: {
+                MainMessagesView()
+            }, label: {
+                Text("Sign Out")
+                    .bold()
+            }))
+            .actionSheet(isPresented: $vm.isLoginMode) {
+                .init(title: Text("Settings"), message: Text("Are you sure you like to sign out?"), buttons: [
+                    .destructive(Text("Sign Out"), action: {
+                        
+                    }),
+                    .cancel()
+                ])
+            }
+            
+            .fullScreenCover(isPresented: $vm.isLoginMode) {
+                LoginView()
+            }
+        }
     }
 }
-
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
             .environmentObject(LoginViewModel())
+    }
+}
+
+struct ProfileHeader: View {
+    @EnvironmentObject var vm: LoginViewModel
+    var body: some View {
+        if let user = vm.chatUser {
+            HStack(spacing: 14){
+                Text("Photo")
+                    .font(.title)
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.white)
+                    .frame(width: 70, height: 70)
+                    .background(Color(.systemGray3))
+                    .clipShape(Circle())
+                
+                VStack(alignment: .leading, spacing: 6) {
+                    Text(user.username)
+                        .font(.headline)
+                    
+                    Text("@\(user.username)")
+                        .font(.callout)
+                        .foregroundStyle(.gray)
+                }
+            }
+
+        }
+    }
+}
+
+struct AccountInfoSection: View {
+    @EnvironmentObject var vm: LoginViewModel
+    var body: some View {
+        Section(header: Text("Account Info")) {
+            TextField("Username", text: $vm.username)
+            TextField("phone", text: $vm.phone)
+            Button {
+                
+            } label: {
+                Text("Update info")
+            }
+        }
     }
 }
