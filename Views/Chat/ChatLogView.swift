@@ -22,6 +22,7 @@ struct ChatLogView: View {
         VStack {
             chatView
             
+            
             chatDisplayBar
         }
         .navigationTitle(vm.chatUser?.username ?? "username")
@@ -87,7 +88,6 @@ struct ChatLogView: View {
                 
             } label: {
                 Image(systemName: "photo")
-                    .font(.system(size: 24))
                     .foregroundStyle(Color(.systemGray))
             }
             HStack {
