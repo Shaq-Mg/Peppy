@@ -16,6 +16,7 @@ struct LoginView: View {
             VStack(spacing: 8) {
                 
                 InputView(text: $viewModel.phone, title: "Phone Number", placeholder: "+44 *********")
+                    .keyboardType(.decimalPad)
                 
                 InputView(text: $viewModel.password, title: "Password", placeholder: "password", isSecureField: true)
             }

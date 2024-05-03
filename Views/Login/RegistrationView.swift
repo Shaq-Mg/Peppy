@@ -18,6 +18,7 @@ struct RegistrationView: View {
                 InputView(text: $viewModel.username, title: "Username", placeholder: "Username")
                 
                 InputView(text: $viewModel.phone, title: "Phone Number", placeholder: "+44 *********")
+                    .keyboardType(.decimalPad)
                 
                 InputView(text: $viewModel.password, title: "Password", placeholder: "Password", isSecureField: true)
                 
