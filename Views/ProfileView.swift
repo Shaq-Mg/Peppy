@@ -10,7 +10,7 @@ import SwiftUI
 struct ProfileView: View {
     @EnvironmentObject var vm: LoginViewModel
     var body: some View {
-        if let user = vm.chatUser {
+        if vm.chatUser != nil {
             List {
                 ProfileHeader()
                 
@@ -46,6 +46,12 @@ struct ProfileView: View {
             
             .fullScreenCover(isPresented: $vm.isLoginMode) {
                 LoginView()
+            }
+        } else {
+            VStack(spacing: 10) {
+                Image(systemName: "gear")
+                    .font(.system(size: 60))
+                Text("No user found...")
             }
         }
     }
