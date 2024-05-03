@@ -38,7 +38,7 @@ struct ProfileView: View {
             .actionSheet(isPresented: $vm.isLoginMode) {
                 .init(title: Text("Settings"), message: Text("Are you sure you like to sign out?"), buttons: [
                     .destructive(Text("Sign Out"), action: {
-                        
+                        vm.userCurrentlyLoggedOut.toggle()
                     }),
                     .cancel()
                 ])

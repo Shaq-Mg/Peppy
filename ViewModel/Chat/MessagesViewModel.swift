@@ -16,15 +16,8 @@ class MessagesViewModel: ObservableObject {
     
     @Published var showNewMessageScreen = false
     @Published var shouldNavigateToChatView = false
-    @Published var isUserCurrentlyLoggedOut = false
     
     init() {
-        DispatchQueue.main.async {
-            self.isUserCurrentlyLoggedOut =
-            FirebaseManager.shared.auth.currentUser?.uid == nil
-        }
-        fetchCurrentUser()
-        
         fetchRecentMessages()
     }
     
@@ -53,23 +46,5 @@ class MessagesViewModel: ObservableObject {
                     }
                 })
             }
-    }
-    func fetchCurrentUser() {
-        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else {
-            self.errorMessage = "Could not find firebase uid"
-            return
-        }
-        
-        FirebaseManager.shared.firestore.collection("users").document(uid).getDocument { snapshot, error in
-            if let error = error {
-                self.errorMessage = "Failed to fetch current user: \(error)"
-                return
-            }
-            guard let data = snapshot?.data() else {
-                self.errorMessage = "No data found"
-                return
-            }
-            self.chatUser = .init(data: data)
-        }
     }
 }

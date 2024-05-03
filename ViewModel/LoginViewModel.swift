@@ -15,6 +15,7 @@ import PhotosUI
 class LoginViewModel: ObservableObject {
     @Published var loginStatus = ""
     @Published var loginStatusMessage = ""
+    @Published var userCurrentlyLoggedOut = false
     @Published var isLoginMode = false
     @Published var errorMessage = ""
     
@@ -33,10 +34,14 @@ class LoginViewModel: ObservableObject {
     
     @Published var chatUser: User?
     
-    init() {        DispatchQueue.main.async {
-        self.isLoginMode =
-        FirebaseManager.shared.auth.currentUser?.uid == nil
-    }
+    init() {
+        DispatchQueue.main.async {
+            self.userCurrentlyLoggedOut =
+            FirebaseManager.shared.auth.currentUser?.uid == nil
+            self.isLoginMode =
+            FirebaseManager.shared.auth.currentUser?.uid == nil
+        }
+        fetchCurrentUser()
     }
     
     func handleAction() {
@@ -72,6 +77,24 @@ class LoginViewModel: ObservableObject {
             }
             print("Successfully created user: \(result?.user.uid ?? "")")
             self.loginStatusMessage = "Successfully created user: \(result?.user.uid ?? "")"
+        }
+    }
+    func fetchCurrentUser() {
+        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else {
+            self.errorMessage = "Could not find firebase uid"
+            return
+        }
+        
+        FirebaseManager.shared.firestore.collection("users").document(uid).getDocument { snapshot, error in
+            if let error = error {
+                self.errorMessage = "Failed to fetch current user: \(error)"
+                return
+            }
+            guard let data = snapshot?.data() else {
+                self.errorMessage = "No data found"
+                return
+            }
+            self.chatUser = .init(data: data)
         }
     }
     private func persistImageToStorage() {
