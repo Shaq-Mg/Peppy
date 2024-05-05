@@ -42,7 +42,7 @@ class MessagesViewModel: ObservableObject {
                             self.recentMessages.insert(rm, at: 0)
                         }
                     } catch {
-                        print(error)
+                       print(error)
                     }
                 })
             }

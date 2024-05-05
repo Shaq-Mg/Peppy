@@ -19,7 +19,7 @@ import FirebaseCore
 @main
 struct PeppyApp: App {
 //    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    let viewModel = LoginViewModel()
+    var viewModel = LoginViewModel()
     var body: some Scene {
         WindowGroup {
             RootView()
