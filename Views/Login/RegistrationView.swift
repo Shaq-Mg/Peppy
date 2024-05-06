@@ -54,6 +54,15 @@ struct RegistrationView: View {
                     .disabled(formIsValid)
             }
         }
+        .alert(viewModel.showAlert?.title ?? "Error", isPresented: Binding(value: $viewModel.showAlert), actions: {
+            Button("OK") {
+                viewModel.showAlert = nil
+            }
+        }, message: {
+            if let message = viewModel.showAlert?.message {
+                Text(message)
+            }
+        })
     }
 }
 extension RegistrationView: AuthFormProtocol {

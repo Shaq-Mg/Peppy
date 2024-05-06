@@ -18,6 +18,8 @@ class LoginViewModel: ObservableObject {
     @Published var userCurrentlyLoggedOut = false
     @Published var isLoginMode = false
     @Published var errorMessage = ""
+    @Published var showAlert: AppAlert? = nil
+    
     
     @Published var phone = ""
     @Published var username = ""

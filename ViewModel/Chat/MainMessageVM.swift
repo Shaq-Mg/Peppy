@@ -11,6 +11,7 @@ import FirebaseFirestoreSwift
 
 class MainMessageVM: ObservableObject {
     @Published var errorMessage = ""
+    @Published var showAlert: AppAlert? = nil
     @Published var chatUser: User?
     @Published var recentMessages: [RecentMessage] = []
     
@@ -52,7 +53,7 @@ class MainMessageVM: ObservableObject {
                             self.recentMessages.insert(rm, at: 0)
                         }
                     } catch {
-                        print(error)
+                        self.showAlert = AppAlert.recentMessage
                     }
                 })
             }

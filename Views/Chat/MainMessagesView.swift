@@ -23,6 +23,15 @@ struct MainMessagesView: View {
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(trailing: NewMessageButton(vm: vm))
         }
+        .alert(vm.showAlert?.title ?? "Error", isPresented: Binding(value: $vm.showAlert), actions: {
+            Button("OK") {
+                vm.showAlert = nil
+            }
+        }, message: {
+            if let message = vm.showAlert?.message {
+                Text(message)
+            }
+        })
         .fullScreenCover(isPresented: $vm.showNewMessageScreen) {
             NewMessageView(selectedUser: { user in
                 vm.showNewMessageScreen.toggle()

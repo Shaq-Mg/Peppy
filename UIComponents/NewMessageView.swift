@@ -47,6 +47,15 @@ struct NewMessageView: View {
                     }
                 }
             }
+            .alert(vm.showAlert?.title ?? "Error", isPresented: Binding(value: $vm.showAlert), actions: {
+                Button("OK") {
+                    vm.showAlert = nil
+                }
+            }, message: {
+                if let message = vm.showAlert?.message {
+                    Text(message)
+                }
+            })
         }
     }
 }
