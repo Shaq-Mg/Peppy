@@ -14,7 +14,7 @@ class NewMessageVM: ObservableObject {
     
     @Published var users: [User] = []
     @Published var errorMesssge = ""
-    @Published var showAlert: AppAlert? = nil
+    @Published var showAlert: NetworkingError? = nil
     
     init() {
         fetchAllUsers()
@@ -25,7 +25,7 @@ class NewMessageVM: ObservableObject {
             .getDocuments { documentsSnapshot, error in
                 if let error = error {
                     self.errorMesssge = "Failed to fetch users: \(error)"
-                    self.showAlert = AppAlert.database
+                    self.showAlert = NetworkingError.invalidData
                     print("Failed to fetch users: \(error)")
                     return
                 }

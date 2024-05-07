@@ -10,57 +10,67 @@ import Foundation
 enum AppAlert: Error, LocalizedError {
     case login
     case createUser
-    case database
     case recentMessage
-    case invalidUrl
     
     var title: String {
         switch self {
-        case .login:
-            return "Login data not found"
-        case .createUser:
-            return "User not found"
-        case .database:
-            return "User not found"
-        case .recentMessage:
-            return "Message failed"
-        case .invalidUrl:
-            return "Url not found"
+        case .login: return "Login data not found"
+        case .createUser: return "User not found"
+        case .recentMessage: return "Message failed"
         }
     }
     
     var message: String? {
         switch self {
-        case .login:
-            return "Unable to login user, please try again"
-        case .createUser:
-            return "Unable to create user, please try again"
-        case .database:
-            return "Unable to fetch data, please try again"
-        case .recentMessage:
-            return "Unable to send message, please try again"
-        case .invalidUrl:
-            return nil
+        case .login: return "Unable to login user, please try again"
+        case .createUser: return "Unable to create user, please try again"
+        case .recentMessage: return "Unable to send message, please try again"
         }
     }
 
 }
 
-enum NetworkError: Error {
+enum NetworkingError: Error {
     case noInternet
+    case invalidUrl
+    case invalidData
+    case invalidStatusCode(statusCode: Int)
     case serverError
-    case other
     
-    func handleError(error: Error) -> String {
-        switch error {
-        case NetworkError.noInternet:
-            return "Error: No internet connection"
-        case NetworkError.serverError:
-            return "Error: No Server error"
-        case NetworkError.other:
-            return "Error: Error is unknown"
-        default:
-            return "Error: Error is unknown"
+    var title: String {
+        switch self {
+        case .noInternet: return "Bad Internet Connection"
+        case .invalidUrl: return "Invalid Url"
+        case .invalidData: return "Invalid Data"
+        case .invalidStatusCode(statusCode: _): return "Status Code"
+        case .serverError: return "Server Error"
         }
     }
+    
+    var message: String {
+        switch self {
+        case .noInternet: return "Error: No internet connection"
+        case .invalidUrl: return "Error: Problem fetching Url, please try again"
+        case .invalidData: return "Error: Not able to fetch data, please try again"
+        case .invalidStatusCode(statusCode: _): return "Status Code response error"
+        case .serverError: return "There seems to be a problem with server, please try again"
+        }
+    }
+    
+//    func handleError(error: Error, statusCode: Int) -> String {
+//        switch error {
+//        case NetworkingError.noInternet:
+//            return "Error: No internet connection"
+//        case NetworkingError.invalidUrl:
+//            return "Error: Problem fetching Url, please try again"
+//        case NetworkingError.invalidData:
+//            return "Error: Not able to fetch data, please try again"
+//        case NetworkingError.invalidStatusCode(statusCode: statusCode):
+//            return "Error: Status Code response error"
+//        case NetworkingError.serverError:
+//            return "Error: There seems to be a problem with server, please try again"
+//        default:
+//            return "Error: Error is unknown"
+//        }
+//    }
 }
