@@ -15,7 +15,7 @@ import PhotosUI
 class LoginViewModel: ObservableObject {
     @Published var loginStatus = ""
     @Published var loginStatusMessage = ""
-    @Published var isLoginMode = false
+    @Published var isLoginMode = true
     @Published var errorMessage = ""
     @Published var showAlert: AppAlert? = nil
     @Published var isUserCurrentlyLoggedOut = true

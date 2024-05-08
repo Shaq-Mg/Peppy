@@ -10,7 +10,7 @@ import SwiftUI
 struct ProfileView: View {
     @EnvironmentObject var vm: LoginViewModel
     var body: some View {
-        if vm.chatUser != nil {
+        if FirebaseManager.shared.auth.currentUser?.uid == nil {
             List {
                 ProfileHeader()
                 
@@ -29,31 +29,13 @@ struct ProfileView: View {
                 }
             }
             .navigationTitle("My Account")
-            .navigationBarItems(trailing: NavigationLink(destination: {
-                MainMessagesView()
+            .navigationBarItems(trailing: Button(action: {
+                vm.isUserCurrentlyLoggedOut.toggle()
             }, label: {
-                Text("Sign Out")
-                    .bold()
+                Text("Sign out").bold()
             }))
             .fullScreenCover(isPresented: $vm.isUserCurrentlyLoggedOut) {
-                LoginView(didCompleteLoginProcess: {
-//                    vm.isUserCurrentlyLoggedOut = false
-                })
-
-            .actionSheet(isPresented: $vm.isLoginMode) {
-                .init(title: Text("Settings"), message: Text("Are you sure you like to sign out?"), buttons: [
-                    .destructive(Text("Sign Out"), action: {
-                        vm.isLoginMode.toggle()
-                    }),
-                    .cancel()
-                ])
-            }
-        }
-        } else {
-            VStack(spacing: 10) {
-                Image(systemName: "gear")
-                    .font(.system(size: 60))
-                Text("No user found...")
+                RootView()
             }
         }
     }
@@ -87,7 +69,7 @@ struct ProfileHeader: View {
                         .foregroundStyle(.gray)
                 }
             }
-
+            
         }
     }
 }
