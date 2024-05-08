@@ -35,6 +35,11 @@ struct ProfileView: View {
                 Text("Sign Out")
                     .bold()
             }))
+            .fullScreenCover(isPresented: $vm.isUserCurrentlyLoggedOut) {
+                LoginView(didCompleteLoginProcess: {
+//                    vm.isUserCurrentlyLoggedOut = false
+                })
+
             .actionSheet(isPresented: $vm.isLoginMode) {
                 .init(title: Text("Settings"), message: Text("Are you sure you like to sign out?"), buttons: [
                     .destructive(Text("Sign Out"), action: {
@@ -43,12 +48,7 @@ struct ProfileView: View {
                     .cancel()
                 ])
             }
-            
-            .fullScreenCover(isPresented: $vm.isLoginMode) {
-                LoginView(didCompleteLoginProcess: {
-                    vm.isLoginMode = false
-                })
-            }
+        }
         } else {
             VStack(spacing: 10) {
                 Image(systemName: "gear")

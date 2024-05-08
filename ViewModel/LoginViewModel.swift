@@ -18,6 +18,7 @@ class LoginViewModel: ObservableObject {
     @Published var isLoginMode = false
     @Published var errorMessage = ""
     @Published var showAlert: AppAlert? = nil
+    @Published var isUserCurrentlyLoggedOut = true
     
     
     @Published var phone = ""
@@ -37,7 +38,7 @@ class LoginViewModel: ObservableObject {
     
     init() {
         DispatchQueue.main.async {
-            self.isLoginMode =
+            self.isUserCurrentlyLoggedOut =
             FirebaseManager.shared.auth.currentUser?.uid == nil
             self.isLoginMode =
             FirebaseManager.shared.auth.currentUser?.uid == nil
@@ -59,7 +60,6 @@ class LoginViewModel: ObservableObject {
             result, error in
             if let error = error {
                 print("Failed to login user:", error)
-                self.loginStatusMessage = "Failed to login user: \(error)"
                 self.showAlert = AppAlert.invalidLogin
                 return
             }
@@ -74,7 +74,7 @@ class LoginViewModel: ObservableObject {
             result, error in
             if let error = error {
                 print("Failed to create user:", error)
-                self.loginStatusMessage = "Failed to create user: \(error)"
+                self.showAlert = AppAlert.createUser
                 return
             }
             print("Successfully created user: \(result?.user.uid ?? "")")

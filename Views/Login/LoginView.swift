@@ -37,6 +37,7 @@ struct LoginView: View {
             .disabled(formIsValid)
             
             Text(viewModel.loginStatusMessage)
+                .font(.callout)
         }
         .alert(viewModel.showAlert?.title ?? "Error", isPresented: Binding(value: $viewModel.showAlert), actions: {
             Button("OK") {

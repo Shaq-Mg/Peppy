@@ -15,7 +15,7 @@ enum AppAlert: Error, LocalizedError {
     var title: String {
         switch self {
         case .invalidLogin: return "Login data not found"
-        case .createUser: return "User not found"
+        case .createUser: return "Failed to create user"
         case .recentMessage: return "Message failed"
         }
     }
@@ -23,7 +23,7 @@ enum AppAlert: Error, LocalizedError {
     var message: String? {
         switch self {
         case .invalidLogin: return "Unable to login user, please try again"
-        case .createUser: return "Unable to create user, please try again"
+        case .createUser: return "Unable to create account, please try again"
         case .recentMessage: return "Unable to send message, please try again"
         }
     }

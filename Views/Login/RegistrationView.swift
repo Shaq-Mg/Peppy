@@ -18,7 +18,7 @@ struct RegistrationView: View {
                 InputView(text: $viewModel.username, title: "Username", placeholder: "Username")
                 
                 InputView(text: $viewModel.phone, title: "Phone Number", placeholder: "+44 *********")
-                    .keyboardType(.decimalPad)
+//                    .keyboardType(.decimalPad)
                 
                 InputView(text: $viewModel.password, title: "Password", placeholder: "Password", isSecureField: true)
                 
@@ -43,6 +43,11 @@ struct RegistrationView: View {
             
             Button {
                 viewModel.handleAction()
+                viewModel.username = ""
+                viewModel.phone = ""
+                viewModel.password = ""
+                viewModel.confirmPassword = ""
+                
             } label: {
                 Text("Create Account")
                     .font(.headline)
@@ -51,7 +56,6 @@ struct RegistrationView: View {
                     .frame(height: 50)
                     .background(formIsValid ? .black : .gray.opacity(0.5))
                     .clipShape(RoundedRectangle(cornerRadius: 20))
-                    .disabled(formIsValid)
             }
         }
         .alert(viewModel.showAlert?.title ?? "Error", isPresented: Binding(value: $viewModel.showAlert), actions: {
