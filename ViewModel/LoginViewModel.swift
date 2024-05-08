@@ -15,7 +15,6 @@ import PhotosUI
 class LoginViewModel: ObservableObject {
     @Published var loginStatus = ""
     @Published var loginStatusMessage = ""
-    @Published var userCurrentlyLoggedOut = false
     @Published var isLoginMode = false
     @Published var errorMessage = ""
     @Published var showAlert: AppAlert? = nil
@@ -38,7 +37,7 @@ class LoginViewModel: ObservableObject {
     
     init() {
         DispatchQueue.main.async {
-            self.userCurrentlyLoggedOut =
+            self.isLoginMode =
             FirebaseManager.shared.auth.currentUser?.uid == nil
             self.isLoginMode =
             FirebaseManager.shared.auth.currentUser?.uid == nil
@@ -61,6 +60,7 @@ class LoginViewModel: ObservableObject {
             if let error = error {
                 print("Failed to login user:", error)
                 self.loginStatusMessage = "Failed to login user: \(error)"
+                self.showAlert = AppAlert.invalidLogin
                 return
             }
             print("Successfully logged in as user: \(result?.user.uid ?? "")")

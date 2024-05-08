@@ -11,6 +11,8 @@ import Firebase
 struct LoginView: View {
     @EnvironmentObject var viewModel: LoginViewModel
     
+    let didCompleteLoginProcess: () -> ()
+    
     var body: some View {
         VStack(spacing: 20) {
             VStack(spacing: 8) {
@@ -57,7 +59,9 @@ extension LoginView: AuthFormProtocol {
 }
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(didCompleteLoginProcess: {
+          
+        })
             .environmentObject(LoginViewModel())
     }
 }

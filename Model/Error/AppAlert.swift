@@ -8,13 +8,13 @@
 import Foundation
 
 enum AppAlert: Error, LocalizedError {
-    case login
+    case invalidLogin
     case createUser
     case recentMessage
     
     var title: String {
         switch self {
-        case .login: return "Login data not found"
+        case .invalidLogin: return "Login data not found"
         case .createUser: return "User not found"
         case .recentMessage: return "Message failed"
         }
@@ -22,7 +22,7 @@ enum AppAlert: Error, LocalizedError {
     
     var message: String? {
         switch self {
-        case .login: return "Unable to login user, please try again"
+        case .invalidLogin: return "Unable to login user, please try again"
         case .createUser: return "Unable to create user, please try again"
         case .recentMessage: return "Unable to send message, please try again"
         }
