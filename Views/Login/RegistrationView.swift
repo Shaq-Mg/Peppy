@@ -17,7 +17,7 @@ struct RegistrationView: View {
             VStack(spacing: 8) {
                 InputView(text: $viewModel.username, title: "Username", placeholder: "Username")
                 
-                InputView(text: $viewModel.email, title: "Email", placeholder: "+44 *********")
+                InputView(text: $viewModel.email, title: "Email", placeholder: "Test@hotmail.com")
 //                    .keyboardType(.decimalPad)
                 
                 InputView(text: $viewModel.password, title: "Password", placeholder: "Password", isSecureField: true)
@@ -43,10 +43,14 @@ struct RegistrationView: View {
             
             Button {
                 viewModel.createAccount()
-                viewModel.username = ""
-                viewModel.email = ""
-                viewModel.password = ""
-                viewModel.confirmPassword = ""
+                if formIsValid {
+                    withAnimation(.easeOut) {
+                        viewModel.username = ""
+                        viewModel.email = ""
+                        viewModel.password = ""
+                        viewModel.confirmPassword = ""
+                    }
+                }
                 
             } label: {
                 Text("Create Account")

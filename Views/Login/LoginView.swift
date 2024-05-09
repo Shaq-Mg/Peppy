@@ -15,8 +15,7 @@ struct LoginView: View {
         VStack(spacing: 20) {
             VStack(spacing: 8) {
                 
-                InputView(text: $viewModel.email, title: "Email", placeholder: "+44 *********")
-                    .keyboardType(.decimalPad)
+                InputView(text: $viewModel.email, title: "Email", placeholder: "Test@hotmail.com")
                 
                 InputView(text: $viewModel.password, title: "Password", placeholder: "password", isSecureField: true)
             }
