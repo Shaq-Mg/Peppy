@@ -15,7 +15,7 @@ import PhotosUI
 class LoginViewModel: ObservableObject {
     @Published var loginStatus = ""
     @Published var loginStatusMessage = ""
-    @Published var isLoginMode = false
+    @Published var isLoginMode = true
     @Published var errorMessage = ""
     @Published var showAlert: AppAlert? = nil
     @Published var isUserCurrentlyLoggedIn = false
@@ -59,7 +59,9 @@ class LoginViewModel: ObservableObject {
             }
             print("Successfully logged in as user: \(result?.user.uid ?? "")")
             self.loginStatusMessage = "Successfully logged in as user: \(result?.user.uid ?? "")"
-            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                self.isUserCurrentlyLoggedIn = true
+            }
         }
     }
     
@@ -73,6 +75,9 @@ class LoginViewModel: ObservableObject {
             }
             print("Successfully created user: \(result?.user.uid ?? "")")
             self.loginStatusMessage = "Successfully created user: \(result?.user.uid ?? "")"
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                self.isUserCurrentlyLoggedIn = true
+            }
         }
     }
     func fetchCurrentUser() {

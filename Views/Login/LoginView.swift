@@ -31,7 +31,7 @@ struct LoginView: View {
             .frame(height: 50)
             .background(formIsValid ? .black : .gray.opacity(0.5))
             .clipShape(RoundedRectangle(cornerRadius: 20))
-            .disabled(formIsValid)
+            .disabled(!formIsValid)
             
             Text(viewModel.loginStatusMessage)
                 .font(.callout)
@@ -52,7 +52,7 @@ extension LoginView: AuthFormProtocol {
         return !viewModel.email.isEmpty
         && viewModel.email.contains("@")
         && !viewModel.password.isEmpty
-        && viewModel.password.count > 5
+        && viewModel.password.count > 4
     }
 }
 struct LoginView_Previews: PreviewProvider {

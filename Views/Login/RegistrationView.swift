@@ -44,7 +44,7 @@ struct RegistrationView: View {
             Button {
                 viewModel.createAccount()
                 if formIsValid {
-                    withAnimation(.easeOut) {
+                    withAnimation(.easeOut(duration: 1.0)) {
                         viewModel.username = ""
                         viewModel.email = ""
                         viewModel.password = ""
@@ -80,7 +80,7 @@ extension RegistrationView: AuthFormProtocol {
         && !viewModel.username.isEmpty
         && viewModel.username.count > 3
         && !viewModel.password.isEmpty
-        && viewModel.password.count > 5
+        && viewModel.password.count > 4
         && viewModel.confirmPassword == viewModel.password
     }
 }
