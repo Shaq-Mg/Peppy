@@ -26,7 +26,7 @@ struct NewMessageView: View {
                                 .font(.system(size: 24).bold())
                             
                             VStack(alignment: .leading, spacing: 8) {
-                                Text(user.phone)
+                                Text(user.email)
                                     .foregroundStyle(Color(.label))
                                     .font(.headline)
                                 Spacer()

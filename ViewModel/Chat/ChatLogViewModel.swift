@@ -100,7 +100,7 @@ class ChatLogViewModel: ObservableObject {
             FirebaseConstants.text: self.chatText,
             FirebaseConstants.fromId: uid,
             FirebaseConstants.toId: toId,
-            FirebaseConstants.phone: chatUser?.phone ?? "username"
+            FirebaseConstants.phone: chatUser?.email ?? "username"
         ] as [String : Any]
         
         // I need to save another similiar dictionary for the recipient of this message...how?

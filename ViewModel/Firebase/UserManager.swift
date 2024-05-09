@@ -17,7 +17,7 @@ final class UserManager {
         let userData: [String:Any] = [
             "user_id" : user.uid,
             "username" : user.username,
-            "phone" : user.phone
+            "email" : user.email
         ]
         try await Firestore.firestore().collection("users").document(user.uid).setData(userData, merge: false)
     }

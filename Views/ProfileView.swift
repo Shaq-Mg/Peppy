@@ -81,7 +81,7 @@ struct AccountInfoSection: View {
     var body: some View {
         Section(header: Text("Account Info")) {
             TextField("Username", text: $vm.username)
-            TextField("phone", text: $vm.phone)
+            TextField("email", text: $vm.email)
             Button {
                 
             } label: {
