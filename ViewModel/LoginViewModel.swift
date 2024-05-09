@@ -15,10 +15,10 @@ import PhotosUI
 class LoginViewModel: ObservableObject {
     @Published var loginStatus = ""
     @Published var loginStatusMessage = ""
-    @Published var isLoginMode = true
+    @Published var isLoginMode = false
     @Published var errorMessage = ""
     @Published var showAlert: AppAlert? = nil
-    @Published var isUserCurrentlyLoggedOut = true
+    @Published var isUserCurrentlyLoggedIn = false
     
     
     @Published var phone = ""
@@ -37,25 +37,19 @@ class LoginViewModel: ObservableObject {
     @Published var chatUser: User?
     
     init() {
-        DispatchQueue.main.async {
-            self.isUserCurrentlyLoggedOut =
-            FirebaseManager.shared.auth.currentUser?.uid == nil
-            self.isLoginMode =
-            FirebaseManager.shared.auth.currentUser?.uid == nil
+        FirebaseManager.shared.auth.addStateDidChangeListener { auth, user in
+            if user != nil {
+                self.isUserCurrentlyLoggedIn = true
+                print("Auth, state changed, is signed in")
+            } else {
+                self.isUserCurrentlyLoggedIn = false
+                print("Auth, state changed, is signed out")
+            }
         }
         fetchCurrentUser()
     }
     
-    func handleAction() {
-        if isLoginMode {
-            loginUser()
-            print("Should log into Firebaae with existing credentials")
-        } else {
-            createNewAccount()
-        }
-    }
-    
-    private func loginUser() {
+    func signIn() {
         FirebaseManager.shared.auth.signIn(withEmail: phone, password: password) {
             result, error in
             if let error = error {
@@ -69,7 +63,7 @@ class LoginViewModel: ObservableObject {
         }
     }
     
-    private func createNewAccount() {
+    func createAccount() {
         FirebaseManager.shared.auth.createUser(withEmail: phone, password: password) {
             result, error in
             if let error = error {

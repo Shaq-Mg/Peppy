@@ -21,9 +21,7 @@ struct RootView: View {
                             .tag(false)
                     }.pickerStyle(.segmented).padding(.bottom)
                     if viewModel.isLoginMode {
-                        LoginView(didCompleteLoginProcess: {
-                            
-                        })
+                        LoginView()
                     } else {
                         RegistrationView()
                     }

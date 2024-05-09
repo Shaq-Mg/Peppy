@@ -42,7 +42,7 @@ struct RegistrationView: View {
             }
             
             Button {
-                viewModel.handleAction()
+                viewModel.createAccount()
                 viewModel.username = ""
                 viewModel.phone = ""
                 viewModel.password = ""

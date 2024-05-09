@@ -10,7 +10,7 @@ import SwiftUI
 struct ProfileView: View {
     @EnvironmentObject var vm: LoginViewModel
     var body: some View {
-        if FirebaseManager.shared.auth.currentUser?.uid == nil {
+        if vm.isUserCurrentlyLoggedIn {
             List {
                 ProfileHeader()
                 
@@ -30,13 +30,15 @@ struct ProfileView: View {
             }
             .navigationTitle("My Account")
             .navigationBarItems(trailing: Button(action: {
-                vm.isUserCurrentlyLoggedOut.toggle()
+                vm.isUserCurrentlyLoggedIn.toggle()
             }, label: {
                 Text("Sign out").bold()
             }))
-            .fullScreenCover(isPresented: $vm.isUserCurrentlyLoggedOut) {
+            .fullScreenCover(isPresented: $vm.isUserCurrentlyLoggedIn) {
                 RootView()
             }
+        } else {
+            RootView()
         }
     }
 }
