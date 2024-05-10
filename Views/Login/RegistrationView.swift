@@ -60,6 +60,7 @@ struct RegistrationView: View {
                     .frame(height: 50)
                     .background(formIsValid ? .black : .gray.opacity(0.5))
                     .clipShape(RoundedRectangle(cornerRadius: 20))
+                    .disabled(!formIsValid)
             }
         }
         .alert(viewModel.showAlert?.title ?? "Error", isPresented: Binding(value: $viewModel.showAlert), actions: {
@@ -73,7 +74,7 @@ struct RegistrationView: View {
         })
     }
 }
-extension RegistrationView: AuthFormProtocol {
+extension RegistrationView {
     var formIsValid: Bool {
         return !viewModel.email.isEmpty
         && viewModel.email.contains("@")

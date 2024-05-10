@@ -10,35 +10,43 @@ import SwiftUI
 struct ProfileView: View {
     @EnvironmentObject var vm: LoginViewModel
     var body: some View {
-        if vm.isUserCurrentlyLoggedIn {
-            List {
-                ProfileHeader()
+        List {
+            ProfileHeader()
+            
+            AccountInfoSection()
+            Button {
+                vm.showSignOutAlert.toggle()
+            } label: {
+                Text("Sign Out")
+                    .font(.headline)
+            }
+            Button {
                 
-                AccountInfoSection()
-                Button {
-                    vm.isLoginMode.toggle()
-                } label: {
-                    Text("Sign Out")
-                        .font(.headline)
-                }
-                Button {
-                    
-                } label: {
-                    Text("Delete Acount")
-                        .font(.headline)
-                }
+            } label: {
+                Text("Delete Acount")
+                    .font(.headline)
             }
-            .navigationTitle("My Account")
-            .navigationBarItems(trailing: Button(action: {
-                vm.isUserCurrentlyLoggedIn.toggle()
-            }, label: {
-                Text("Sign out").bold()
-            }))
-            .fullScreenCover(isPresented: $vm.isUserCurrentlyLoggedIn) {
-                RootView()
-            }
-        } else {
-            RootView()
+        }
+        .navigationTitle("My Account")
+        .navigationBarItems(trailing: Button(action: {
+            vm.isUserCurrentlyLoggedOut.toggle()
+        }, label: {
+            Text("Sign out").bold()
+        }))
+        .actionSheet(isPresented: $vm.showSignOutAlert, content: {
+            .init(title: Text("Sign Out").bold(), message: Text("Are you sure that you want to sign out your account?"), buttons: [
+                .destructive(Text("Yes").bold(), action: {
+                    vm.signOut()
+                    vm.loginStatusMessage = ""
+                }),
+                .cancel()
+            ])
+        })
+        .fullScreenCover(isPresented: $vm.isUserCurrentlyLoggedOut, onDismiss: nil) {
+            RootView(didCompleteLoginProcess: {
+                vm.isUserCurrentlyLoggedOut = false
+                vm.fetchCurrentUser()
+            })
         }
     }
 }

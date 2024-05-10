@@ -10,18 +10,26 @@ import Firebase
 
 struct LoginView: View {
     @EnvironmentObject var viewModel: LoginViewModel
+    let didCompleteLoginProcess: () -> ()
     
     var body: some View {
         VStack(spacing: 20) {
             VStack(spacing: 8) {
-                
+
                 InputView(text: $viewModel.email, title: "Email", placeholder: "Test@hotmail.com")
-                
+
                 InputView(text: $viewModel.password, title: "Password", placeholder: "password", isSecureField: true)
             }
-            
+
             Button {
-                viewModel.signIn()
+                self.didCompleteLoginProcess()
+                if formIsValid {
+                    withAnimation(.easeOut(duration: 1.0)) {
+                        viewModel.email = ""
+                        viewModel.password = ""
+                    }
+                }
+
             } label: {
                 Text("Sign In")
             }
@@ -32,7 +40,7 @@ struct LoginView: View {
             .background(formIsValid ? .black : .gray.opacity(0.5))
             .clipShape(RoundedRectangle(cornerRadius: 20))
             .disabled(!formIsValid)
-            
+
             Text(viewModel.loginStatusMessage)
                 .font(.callout)
         }
@@ -57,7 +65,7 @@ extension LoginView: AuthFormProtocol {
 }
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(didCompleteLoginProcess: { })
             .environmentObject(LoginViewModel())
     }
 }

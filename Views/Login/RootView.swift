@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RootView: View {
     @EnvironmentObject var viewModel: LoginViewModel
+    let didCompleteLoginProcess: () -> ()
     
     var body: some View {
         NavigationStack {
@@ -21,7 +22,9 @@ struct RootView: View {
                             .tag(false)
                     }.pickerStyle(.segmented).padding(.bottom)
                     if viewModel.isLoginMode {
-                        LoginView()
+                        LoginView(didCompleteLoginProcess: {
+                            self.signIn()
+                        })
                     } else {
                         RegistrationView()
                     }
@@ -32,11 +35,25 @@ struct RootView: View {
             .background(.mint.opacity(0.4))
         }
     }
+    private func signIn() {
+        FirebaseManager.shared.auth.signIn(withEmail: viewModel.email, password: viewModel.password) {
+            result, error in
+            if let error = error {
+                print("Failed to login user:", error)
+                viewModel.showAlert = AppAlert.invalidLogin
+                return
+            }
+            print("Successfully logged in as user: \(result?.user.uid ?? "")")
+            viewModel.loginStatusMessage = "Successfully logged in as user: \(result?.user.uid ?? "")"
+            //dismiss RootView once signed in succcessfully
+            self.didCompleteLoginProcess()
+        }
+    }
 }
 
 struct RootView_Previews: PreviewProvider {
     static var previews: some View {
-        RootView()
+        RootView(didCompleteLoginProcess: { })
             .environmentObject(LoginViewModel())
     }
 }

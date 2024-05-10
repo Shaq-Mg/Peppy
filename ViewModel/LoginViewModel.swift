@@ -15,11 +15,11 @@ import PhotosUI
 class LoginViewModel: ObservableObject {
     @Published var loginStatus = ""
     @Published var loginStatusMessage = ""
-    @Published var isLoginMode = true
     @Published var errorMessage = ""
+    @Published var isLoginMode = true
+    @Published var showSignOutAlert = false
     @Published var showAlert: AppAlert? = nil
-    @Published var isUserCurrentlyLoggedIn = false
-    
+    @Published var isUserCurrentlyLoggedOut = true
     
     @Published var email = ""
     @Published var username = ""
@@ -37,32 +37,16 @@ class LoginViewModel: ObservableObject {
     @Published var chatUser: User?
     
     init() {
-        FirebaseManager.shared.auth.addStateDidChangeListener { auth, user in
-            if user != nil {
-                self.isUserCurrentlyLoggedIn = true
-                print("Auth, state changed, is signed in")
-            } else {
-                self.isUserCurrentlyLoggedIn = false
-                print("Auth, state changed, is signed out")
-            }
+        DispatchQueue.main.async {
+            self.isUserCurrentlyLoggedOut =
+            FirebaseManager.shared.auth.currentUser?.uid == nil
         }
         fetchCurrentUser()
     }
     
-    func signIn() {
-        FirebaseManager.shared.auth.signIn(withEmail: email, password: password) {
-            result, error in
-            if let error = error {
-                print("Failed to login user:", error)
-                self.showAlert = AppAlert.invalidLogin
-                return
-            }
-            print("Successfully logged in as user: \(result?.user.uid ?? "")")
-            self.loginStatusMessage = "Successfully logged in as user: \(result?.user.uid ?? "")"
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                self.isUserCurrentlyLoggedIn = true
-            }
-        }
+    func signOut() {
+        isUserCurrentlyLoggedOut.toggle()
+        try? FirebaseManager.shared.auth.signOut()
     }
     
     func createAccount() {
@@ -75,9 +59,6 @@ class LoginViewModel: ObservableObject {
             }
             print("Successfully created user: \(result?.user.uid ?? "")")
             self.loginStatusMessage = "Successfully created user: \(result?.user.uid ?? "")"
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                self.isUserCurrentlyLoggedIn = true
-            }
         }
     }
     func fetchCurrentUser() {
