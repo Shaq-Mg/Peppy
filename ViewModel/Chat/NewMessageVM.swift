@@ -26,7 +26,7 @@ class NewMessageVM: ObservableObject {
             .getDocuments { documentsSnapshot, error in
                 if let error = error {
                     self.errorMesssge = "Failed to fetch users: \(error)"
-                    self.showAlert = NetworkingError.invalidData
+                    self.showAlert = NetworkingError.fetchUser
                     print("Failed to fetch users: \(error)")
                     return
                 }

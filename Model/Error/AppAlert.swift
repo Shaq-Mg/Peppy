@@ -9,14 +9,18 @@ import Foundation
 
 enum AppAlert: Error, LocalizedError {
     case invalidLogin
+    case invalidImage
     case createUser
     case recentMessage
+    case fetchUser
     
     var title: String {
         switch self {
         case .invalidLogin: return "Login data not found"
         case .createUser: return "Failed to create user"
         case .recentMessage: return "Message failed"
+        case .invalidImage: return "Image data invalid"
+        case .fetchUser: return "Failed to fetch users"
         }
     }
     
@@ -25,6 +29,8 @@ enum AppAlert: Error, LocalizedError {
         case .invalidLogin: return "Unable to login user, please try again"
         case .createUser: return "Unable to create account, please try again"
         case .recentMessage: return "Unable to send message, please try again"
+        case .invalidImage: return "Unable to find Profile image Url, please try again"
+        case .fetchUser: return "Problem fetching users from database"
         }
     }
 
@@ -36,6 +42,7 @@ enum NetworkingError: Error {
     case invalidData
     case invalidStatusCode(statusCode: Int)
     case serverError
+    case fetchUser
     
     var title: String {
         switch self {
@@ -44,6 +51,7 @@ enum NetworkingError: Error {
         case .invalidData: return "Invalid Data"
         case .invalidStatusCode(statusCode: _): return "Status Code"
         case .serverError: return "Server Error"
+        case .fetchUser: return "User not found"
         }
     }
     
@@ -54,6 +62,7 @@ enum NetworkingError: Error {
         case .invalidData: return "Error: Not able to fetch data, please try again"
         case .invalidStatusCode(statusCode: _): return "Status Code response error"
         case .serverError: return "There seems to be a problem with server, please try again"
+        case .fetchUser: return "Error fetching current user"
         }
     }
     

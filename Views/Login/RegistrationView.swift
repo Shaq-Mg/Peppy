@@ -104,7 +104,7 @@ struct ImageSelector: View {
                         .aspectRatio(contentMode: .fill)
                         .clipShape(Circle())
                 } else {
-                  ProfileImageView(size: 80)
+                    ProfileImageView(size: 80, imageSize: 40)
                 }
             }
             .onChange(of: viewModel.imageSelection) { _ in

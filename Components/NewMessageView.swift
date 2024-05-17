@@ -22,22 +22,8 @@ struct NewMessageView: View {
                         presentationMode.wrappedValue.dismiss()
                         selectedUser(user)
                     } label: {
-                        HStack {
-                            WebImage(url: URL(string: vm.chatUser?.photoImageUrl ?? ""))
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 36, height: 36)
-                                .clipped()
-                                .overlay(RoundedRectangle(cornerRadius: 36).stroke(Color(.label), lineWidth: 1))
-                            
-                            VStack(alignment: .leading, spacing: 8) {
-                                Text(user.email)
-                                    .foregroundStyle(Color(.label))
-                                    .font(.headline)
-                                Spacer()
-                            }.padding()
-                            Divider()
-                        }
+                        MessageContactRow(vm: vm)
+                        
                     }
                 }
             }

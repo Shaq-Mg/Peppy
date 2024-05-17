@@ -22,7 +22,7 @@ struct PeppyApp: App {
     var viewModel = LoginViewModel()
     var body: some Scene {
         WindowGroup {
-            ProfileView()
+            HomeView()
                 .environmentObject(viewModel)
         }
     }

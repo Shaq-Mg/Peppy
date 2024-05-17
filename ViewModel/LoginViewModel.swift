@@ -75,6 +75,7 @@ class LoginViewModel: ObservableObject {
                 return
             }
             guard let data = snapshot?.data() else {
+                self.showAlert = AppAlert.fetchUser
                 self.errorMessage = "No data found"
                 return
             }

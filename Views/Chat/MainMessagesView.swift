@@ -21,6 +21,7 @@ struct MainMessagesView: View {
             }
             .navigationTitle("Chats")
             .navigationBarTitleDisplayMode(.inline)
+            .navigationBarItems(leading: ProfileImageView(size: 30, imageSize: 10))
             .navigationBarItems(trailing: NewMessageButton(vm: vm))
         }
         .alert(vm.showAlert?.title ?? "Error", isPresented: Binding(value: $vm.showAlert), actions: {

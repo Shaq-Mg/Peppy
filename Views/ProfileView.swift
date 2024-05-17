@@ -24,7 +24,7 @@ struct ProfileView: View {
                                 .clipShape(Circle())
                         }
                     } else {
-                        ProfileImageView(size: 60)
+                        ProfileImageView(size: 50, imageSize: 30)
                     }
                     
                     Text(FirebaseManager.shared.auth.currentUser?.email ?? "")
@@ -65,12 +65,6 @@ struct ProfileView: View {
                 .cancel()
             ])
         })
-        .fullScreenCover(isPresented: $vm.isUserCurrentlyLoggedOut, onDismiss: nil) {
-            RootView(didCompleteLoginProcess: {
-                vm.isUserCurrentlyLoggedOut = false
-                vm.fetchCurrentUser()
-            })
-        }
     }
 }
 struct ProfileView_Previews: PreviewProvider {
@@ -110,8 +104,17 @@ struct AccountInfoSection: View {
     @EnvironmentObject var vm: LoginViewModel
     var body: some View {
         Section(header: Text("Account Info")) {
-            TextField("Username", text: $vm.username)
-            TextField("email", text: $vm.email)
+            LabeledContent {
+                Text(vm.username)
+            } label: {
+                Text("Usernane")
+            }
+            LabeledContent {
+                Text(vm.email)
+            } label: {
+                Text("Email")
+            }
+
             Button {
                 
             } label: {
