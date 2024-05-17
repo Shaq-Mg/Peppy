@@ -13,6 +13,7 @@ import FirebaseFirestore
 class NewMessageVM: ObservableObject {
     
     @Published var users: [User] = []
+    @Published var chatUser: User?
     @Published var errorMesssge = ""
     @Published var showAlert: NetworkingError? = nil
     

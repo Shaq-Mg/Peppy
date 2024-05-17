@@ -22,7 +22,6 @@ struct ChatLogView: View {
         VStack {
             chatView
             
-            
             chatDisplayBar
         }
         .navigationTitle(vm.chatUser?.username ?? "username")

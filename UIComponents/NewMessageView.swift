@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct NewMessageView: View {
     @Environment(\.presentationMode) var presentationMode
@@ -22,8 +23,12 @@ struct NewMessageView: View {
                         selectedUser(user)
                     } label: {
                         HStack {
-                            Image(systemName: "person")
-                                .font(.system(size: 24).bold())
+                            WebImage(url: URL(string: vm.chatUser?.photoImageUrl ?? ""))
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 36, height: 36)
+                                .clipped()
+                                .overlay(RoundedRectangle(cornerRadius: 36).stroke(Color(.label), lineWidth: 1))
                             
                             VStack(alignment: .leading, spacing: 8) {
                                 Text(user.email)

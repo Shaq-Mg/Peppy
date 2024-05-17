@@ -9,8 +9,30 @@ import SwiftUI
 
 struct ProfileView: View {
     @EnvironmentObject var vm: LoginViewModel
+    
     var body: some View {
         List {
+            Section(header: Text("Profile image")) {
+                HStack {
+                    if vm.selectedImage != nil {
+                        if let image = vm.selectedImage {
+                            Image(uiImage: image)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 60, height: 60)
+                                .shadow(radius: 2)
+                                .clipShape(Circle())
+                        }
+                    } else {
+                        ProfileImageView(size: 60)
+                    }
+                    
+                    Text(FirebaseManager.shared.auth.currentUser?.email ?? "")
+                        .font(.headline)
+                        .padding(.leading)
+                }
+                .foregroundStyle(Color(.label))
+            }
             ProfileHeader()
             
             AccountInfoSection()
@@ -24,6 +46,7 @@ struct ProfileView: View {
                 
             } label: {
                 Text("Delete Acount")
+                    .foregroundStyle(.red)
                     .font(.headline)
             }
         }
@@ -79,7 +102,6 @@ struct ProfileHeader: View {
                         .foregroundStyle(.gray)
                 }
             }
-            
         }
     }
 }

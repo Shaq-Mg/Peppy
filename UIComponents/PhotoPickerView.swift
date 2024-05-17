@@ -15,17 +15,18 @@ struct PhotoPickerView: View {
         VStack {
             PhotosPicker(selection: $viewModel.imageSelection) {
                 VStack {
-                    if let image = viewModel.selectedImage {
+                    if let image = viewModel.image {
                         Image(uiImage: image)
                             .resizable()
                             .scaledToFill()
                             .frame(width: 100, height: 100)
                             .cornerRadius(50)
                     } else {
-                        VStack {
+                        VStack(spacing: 8) {
                             Image(systemName: "person.fill")
                                 .font(.system(size: 60))
                                 .foregroundStyle(.black)
+                            
                             Text("Upload photo")
                                 .font(.caption)
                                 .fontWeight(.semibold)

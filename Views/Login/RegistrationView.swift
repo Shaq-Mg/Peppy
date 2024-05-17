@@ -10,9 +10,10 @@ import PhotosUI
 
 struct RegistrationView: View {
     @EnvironmentObject var viewModel: LoginViewModel
-    
+
     var body: some View {
         VStack(spacing: 20) {
+            ImageSelector()
             
             VStack(spacing: 8) {
                 InputView(text: $viewModel.username, title: "Username", placeholder: "Username")
@@ -89,5 +90,27 @@ struct RegistrationView_Previews: PreviewProvider {
     static var previews: some View {
         RegistrationView()
             .environmentObject(LoginViewModel())
+    }
+}
+
+struct ImageSelector: View {
+    @EnvironmentObject var viewModel: LoginViewModel
+    var body: some View {
+        VStack {
+            PhotosPicker(selection: $viewModel.imageSelection) {
+                if let image = viewModel.selectedImage {
+                    Image(uiImage: image)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .clipShape(Circle())
+                } else {
+                  ProfileImageView(size: 80)
+                }
+            }
+            .onChange(of: viewModel.imageSelection) { _ in
+                viewModel.loadImage()
+            }
+        }
+        .frame(width: 100, height: 100)
     }
 }

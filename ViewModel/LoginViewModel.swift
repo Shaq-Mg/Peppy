@@ -27,7 +27,7 @@ class LoginViewModel: ObservableObject {
     @Published var password = ""
     @Published var confirmPassword = ""
     
-    @Published private(set) var selectedImage: UIImage? = nil
+    @Published private(set) var selectedImage: UIImage?
     @Published var imageSelection: PhotosPickerItem? = nil {
         didSet {
             persistImageToStorage()
@@ -59,6 +59,8 @@ class LoginViewModel: ObservableObject {
             }
             print("Successfully created user: \(result?.user.uid ?? "")")
             self.loginStatusMessage = "Successfully created user: \(result?.user.uid ?? "")"
+            
+            self.persistImageToStorage()
         }
     }
     func fetchCurrentUser() {
@@ -82,6 +84,7 @@ class LoginViewModel: ObservableObject {
     private func persistImageToStorage() {
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
         let ref = FirebaseManager.shared.storage.reference(withPath: uid)
+        guard selectedImage != nil else { return }
         guard let imageData = self.selectedImage?.jpegData(compressionQuality: 0.5) else { return }
         ref.putData(imageData,metadata: nil) { metaData, error in
             if let error = error {
@@ -100,6 +103,14 @@ class LoginViewModel: ObservableObject {
             }
         }
     }
+    
+    func loadImage() {
+        Task {
+            guard let imageData = try await imageSelection?.loadTransferable(type: Data.self) else { return }
+            guard let image = UIImage(data: imageData) else { return }
+        }
+    }
+    
     private func storeUserInformation(profileImageUrl: URL) {
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else {  return }
         let userData = ["phone": self.email, "uid": uid, "photoImageUrl": profileImageUrl.absoluteString]
