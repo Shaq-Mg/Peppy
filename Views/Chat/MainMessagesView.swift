@@ -12,6 +12,7 @@ import SDWebImageSwiftUI
 
 struct MainMessagesView: View {
     @ObservedObject var vm = MainMessageVM()
+    @State private var searchText = ""
     var body: some View {
         VStack {
             ScrollView(.vertical, showsIndicators: false) {
@@ -19,10 +20,10 @@ struct MainMessagesView: View {
                     RecentMessageRow(rm: recentMessage)
                 }
             }
+            .searchable(text: $searchText)
             .onAppear(perform: vm.fetchCurrentUser)
             .navigationTitle("Chats")
             .navigationBarTitleDisplayMode(.inline)
-            .navigationBarItems(leading: ProfileImageView(size: 30, imageSize: 10))
             .navigationBarItems(trailing: NewMessageButton(vm: vm))
         }
         .alert(vm.showAlert?.title ?? "Error", isPresented: Binding(value: $vm.showAlert), actions: {
