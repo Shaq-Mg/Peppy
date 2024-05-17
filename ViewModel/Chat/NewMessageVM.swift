@@ -21,7 +21,7 @@ class NewMessageVM: ObservableObject {
         fetchAllUsers()
     }
     
-    private func fetchAllUsers() {
+    func fetchAllUsers() {
         FirebaseManager.shared.firestore.collection("users")
             .getDocuments { documentsSnapshot, error in
                 if let error = error {

@@ -19,6 +19,7 @@ struct MainMessagesView: View {
                     RecentMessageRow(rm: recentMessage)
                 }
             }
+            .onAppear(perform: vm.fetchCurrentUser)
             .navigationTitle("Chats")
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(leading: ProfileImageView(size: 30, imageSize: 10))

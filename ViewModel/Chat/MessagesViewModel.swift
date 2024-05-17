@@ -20,6 +20,7 @@ class MessagesViewModel: ObservableObject {
     
     init() {
         fetchRecentMessages()
+        fetchCurrentUser()
     }
     
     private func fetchRecentMessages() {
@@ -47,5 +48,24 @@ class MessagesViewModel: ObservableObject {
                     }
                 })
             }
+    }
+    func fetchCurrentUser() {
+        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else {
+            self.errorMessage = "Could not find firebase uid"
+            return
+        }
+        
+        FirebaseManager.shared.firestore.collection("users").document(uid).getDocument { snapshot, error in
+            if let error = error {
+                self.errorMessage = "Failed to fetch current user: \(error)"
+                return
+            }
+            guard let data = snapshot?.data() else {
+                self.showAlert = AppAlert.fetchUser
+                self.errorMessage = "No data found"
+                return
+            }
+            self.chatUser = .init(data: data)
+        }
     }
 }

@@ -27,6 +27,7 @@ struct NewMessageView: View {
                     }
                 }
             }
+            .onAppear(perform: vm.fetchAllUsers)
             .navigationTitle("New Message")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
