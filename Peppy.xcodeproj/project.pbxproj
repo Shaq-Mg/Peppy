@@ -7,13 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46163EB42C6A4B0500CD6CBD /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 46163EB32C6A4B0500CD6CBD /* FirebaseFirestore */; };
+		46163EB72C6A4B1A00CD6CBD /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 46163EB62C6A4B1A00CD6CBD /* FirebaseAuth */; };
+		46163EB92C6A4B2F00CD6CBD /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 46163EB82C6A4B2F00CD6CBD /* FirebaseFirestoreSwift */; };
+		46163EBB2C6A4B3D00CD6CBD /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 46163EBA2C6A4B3D00CD6CBD /* FirebaseStorage */; };
+		464D7EE42C6B6CA6005FAAD5 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464D7EE32C6B6CA6005FAAD5 /* AuthenticationViewModel.swift */; };
+		464D7EE72C6B6D49005FAAD5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464D7EE62C6B6D49005FAAD5 /* User.swift */; };
+		464D7EE92C6B6DCF005FAAD5 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464D7EE82C6B6DCF005FAAD5 /* RootView.swift */; };
+		464D7EEC2C6B6E6C005FAAD5 /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464D7EEB2C6B6E6C005FAAD5 /* DBService.swift */; };
+		464D7EEE2C6B6E98005FAAD5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464D7EED2C6B6E98005FAAD5 /* LoginView.swift */; };
+		464D7EF02C6B6EAD005FAAD5 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464D7EEF2C6B6EAD005FAAD5 /* RegistrationView.swift */; };
+		464D7EF22C6B6FAB005FAAD5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464D7EF12C6B6FAB005FAAD5 /* HomeView.swift */; };
+		464D7EF52C6B7045005FAAD5 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464D7EF42C6B7045005FAAD5 /* InputView.swift */; };
+		464D7EF72C6B70A8005FAAD5 /* FormIsValid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464D7EF62C6B70A8005FAAD5 /* FormIsValid.swift */; };
+		467585C92C6B89C2007468AE /* RegistrationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467585C82C6B89C2007468AE /* RegistrationButton.swift */; };
 		46F4739F2C69414F008ED2FD /* PeppyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F4739E2C69414F008ED2FD /* PeppyApp.swift */; };
-		46F473A12C69414F008ED2FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F473A02C69414F008ED2FD /* ContentView.swift */; };
 		46F473A32C694150008ED2FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46F473A22C694150008ED2FD /* Assets.xcassets */; };
 		46F473A62C694150008ED2FD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46F473A52C694150008ED2FD /* Preview Assets.xcassets */; };
 		46F473B02C694150008ED2FD /* PeppyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F473AF2C694150008ED2FD /* PeppyTests.swift */; };
 		46F473BA2C694150008ED2FD /* PeppyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F473B92C694150008ED2FD /* PeppyUITests.swift */; };
 		46F473BC2C694150008ED2FD /* PeppyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F473BB2C694150008ED2FD /* PeppyUITestsLaunchTests.swift */; };
+		46F473D12C694256008ED2FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F473D02C694256008ED2FD /* GoogleService-Info.plist */; };
+		46F473D22C694256008ED2FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F473D02C694256008ED2FD /* GoogleService-Info.plist */; };
+		46F473D32C694256008ED2FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F473D02C694256008ED2FD /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +50,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		46163EB52C6A4B0800CD6CBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		464D7EE32C6B6CA6005FAAD5 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		464D7EE62C6B6D49005FAAD5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		464D7EE82C6B6DCF005FAAD5 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		464D7EEB2C6B6E6C005FAAD5 /* DBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
+		464D7EED2C6B6E98005FAAD5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		464D7EEF2C6B6EAD005FAAD5 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		464D7EF12C6B6FAB005FAAD5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		464D7EF42C6B7045005FAAD5 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		464D7EF62C6B70A8005FAAD5 /* FormIsValid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormIsValid.swift; sourceTree = "<group>"; };
+		467585C82C6B89C2007468AE /* RegistrationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationButton.swift; sourceTree = "<group>"; };
 		46F4739B2C69414F008ED2FD /* Peppy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Peppy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46F4739E2C69414F008ED2FD /* PeppyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeppyApp.swift; sourceTree = "<group>"; };
-		46F473A02C69414F008ED2FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		46F473A22C694150008ED2FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46F473A52C694150008ED2FD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		46F473AB2C694150008ED2FD /* PeppyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeppyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +70,7 @@
 		46F473B52C694150008ED2FD /* PeppyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeppyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		46F473B92C694150008ED2FD /* PeppyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeppyUITests.swift; sourceTree = "<group>"; };
 		46F473BB2C694150008ED2FD /* PeppyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeppyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		46F473D02C694256008ED2FD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +78,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46163EB42C6A4B0500CD6CBD /* FirebaseFirestore in Frameworks */,
+				46163EBB2C6A4B3D00CD6CBD /* FirebaseStorage in Frameworks */,
+				46163EB72C6A4B1A00CD6CBD /* FirebaseAuth in Frameworks */,
+				46163EB92C6A4B2F00CD6CBD /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,13 +102,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46163EB22C6A4B0500CD6CBD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		464D7EE52C6B6D38005FAAD5 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				464D7EE62C6B6D49005FAAD5 /* User.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		464D7EEA2C6B6E42005FAAD5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				464D7EEB2C6B6E6C005FAAD5 /* DBService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		464D7EF32C6B7031005FAAD5 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				467585C82C6B89C2007468AE /* RegistrationButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		46F473922C69414F008ED2FD = {
 			isa = PBXGroup;
 			children = (
+				46F473CD2C6941A0008ED2FD /* App */,
+				46F473CC2C69419B008ED2FD /* Managers */,
+				46F473CB2C694192008ED2FD /* Extentions */,
+				464D7EEA2C6B6E42005FAAD5 /* Services */,
+				46F473CA2C694183008ED2FD /* Models */,
+				46F473C92C694178008ED2FD /* Subviews */,
+				46F473C82C694172008ED2FD /* Core */,
 				46F4739D2C69414F008ED2FD /* Peppy */,
 				46F473AE2C694150008ED2FD /* PeppyTests */,
 				46F473B82C694150008ED2FD /* PeppyUITests */,
 				46F4739C2C69414F008ED2FD /* Products */,
+				46163EB22C6A4B0500CD6CBD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,8 +164,7 @@
 		46F4739D2C69414F008ED2FD /* Peppy */ = {
 			isa = PBXGroup;
 			children = (
-				46F4739E2C69414F008ED2FD /* PeppyApp.swift */,
-				46F473A02C69414F008ED2FD /* ContentView.swift */,
+				46163EB52C6A4B0800CD6CBD /* Info.plist */,
 				46F473A22C694150008ED2FD /* Assets.xcassets */,
 				46F473A42C694150008ED2FD /* Preview Content */,
 			);
@@ -127,6 +196,75 @@
 			path = PeppyUITests;
 			sourceTree = "<group>";
 		};
+		46F473C82C694172008ED2FD /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				464D7EF12C6B6FAB005FAAD5 /* HomeView.swift */,
+				46F473CE2C6941AF008ED2FD /* Registration */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		46F473C92C694178008ED2FD /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				464D7EF42C6B7045005FAAD5 /* InputView.swift */,
+				464D7EF32C6B7031005FAAD5 /* Buttons */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		46F473CA2C694183008ED2FD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				464D7EE52C6B6D38005FAAD5 /* Authentication */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		46F473CB2C694192008ED2FD /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				464D7EF62C6B70A8005FAAD5 /* FormIsValid.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		46F473CC2C69419B008ED2FD /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		46F473CD2C6941A0008ED2FD /* App */ = {
+			isa = PBXGroup;
+			children = (
+				46F473D02C694256008ED2FD /* GoogleService-Info.plist */,
+				46F4739E2C69414F008ED2FD /* PeppyApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		46F473CE2C6941AF008ED2FD /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				464D7EED2C6B6E98005FAAD5 /* LoginView.swift */,
+				464D7EEF2C6B6EAD005FAAD5 /* RegistrationView.swift */,
+				464D7EE82C6B6DCF005FAAD5 /* RootView.swift */,
+				46F473CF2C6941B8008ED2FD /* ViewModel */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		46F473CF2C6941B8008ED2FD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				464D7EE32C6B6CA6005FAAD5 /* AuthenticationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +281,12 @@
 			dependencies = (
 			);
 			name = Peppy;
+			packageProductDependencies = (
+				46163EB32C6A4B0500CD6CBD /* FirebaseFirestore */,
+				46163EB62C6A4B1A00CD6CBD /* FirebaseAuth */,
+				46163EB82C6A4B2F00CD6CBD /* FirebaseFirestoreSwift */,
+				46163EBA2C6A4B3D00CD6CBD /* FirebaseStorage */,
+			);
 			productName = Peppy;
 			productReference = 46F4739B2C69414F008ED2FD /* Peppy.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +359,9 @@
 				Base,
 			);
 			mainGroup = 46F473922C69414F008ED2FD;
+			packageReferences = (
+				46163EB12C6A4AE600CD6CBD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 46F4739C2C69414F008ED2FD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,6 +380,7 @@
 			files = (
 				46F473A62C694150008ED2FD /* Preview Assets.xcassets in Resources */,
 				46F473A32C694150008ED2FD /* Assets.xcassets in Resources */,
+				46F473D12C694256008ED2FD /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +388,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46F473D22C694256008ED2FD /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +396,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46F473D32C694256008ED2FD /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,8 +407,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46F473A12C69414F008ED2FD /* ContentView.swift in Sources */,
+				464D7EEE2C6B6E98005FAAD5 /* LoginView.swift in Sources */,
+				464D7EE72C6B6D49005FAAD5 /* User.swift in Sources */,
+				464D7EEC2C6B6E6C005FAAD5 /* DBService.swift in Sources */,
+				464D7EF02C6B6EAD005FAAD5 /* RegistrationView.swift in Sources */,
+				464D7EF72C6B70A8005FAAD5 /* FormIsValid.swift in Sources */,
+				467585C92C6B89C2007468AE /* RegistrationButton.swift in Sources */,
+				464D7EE42C6B6CA6005FAAD5 /* AuthenticationViewModel.swift in Sources */,
+				464D7EF22C6B6FAB005FAAD5 /* HomeView.swift in Sources */,
+				464D7EF52C6B7045005FAAD5 /* InputView.swift in Sources */,
 				46F4739F2C69414F008ED2FD /* PeppyApp.swift in Sources */,
+				464D7EE92C6B6DCF005FAAD5 /* RootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +579,7 @@
 				DEVELOPMENT_TEAM = X458CUZL7L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Peppy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -449,6 +609,7 @@
 				DEVELOPMENT_TEAM = X458CUZL7L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Peppy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -583,6 +744,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		46163EB12C6A4AE600CD6CBD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		46163EB32C6A4B0500CD6CBD /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 46163EB12C6A4AE600CD6CBD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		46163EB62C6A4B1A00CD6CBD /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 46163EB12C6A4AE600CD6CBD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		46163EB82C6A4B2F00CD6CBD /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 46163EB12C6A4AE600CD6CBD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		46163EBA2C6A4B3D00CD6CBD /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 46163EB12C6A4AE600CD6CBD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 46F473932C69414F008ED2FD /* Project object */;
 }
