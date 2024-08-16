@@ -11,6 +11,10 @@
 		46163EB72C6A4B1A00CD6CBD /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 46163EB62C6A4B1A00CD6CBD /* FirebaseAuth */; };
 		46163EB92C6A4B2F00CD6CBD /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 46163EB82C6A4B2F00CD6CBD /* FirebaseFirestoreSwift */; };
 		46163EBB2C6A4B3D00CD6CBD /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 46163EBA2C6A4B3D00CD6CBD /* FirebaseStorage */; };
+		4647010C2C6FB0C100F53B9A /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4647010B2C6FB0C100F53B9A /* MapViewRepresentable.swift */; };
+		4647010E2C6FB20500F53B9A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4647010D2C6FB20500F53B9A /* MapView.swift */; };
+		464701112C6FB24D00F53B9A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464701102C6FB24D00F53B9A /* LocationManager.swift */; };
+		464701142C6FD0AF00F53B9A /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464701132C6FD0AF00F53B9A /* SearchBarView.swift */; };
 		464D7EE42C6B6CA6005FAAD5 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464D7EE32C6B6CA6005FAAD5 /* AuthenticationViewModel.swift */; };
 		464D7EE72C6B6D49005FAAD5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464D7EE62C6B6D49005FAAD5 /* User.swift */; };
 		464D7EE92C6B6DCF005FAAD5 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464D7EE82C6B6DCF005FAAD5 /* RootView.swift */; };
@@ -51,6 +55,10 @@
 
 /* Begin PBXFileReference section */
 		46163EB52C6A4B0800CD6CBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4647010B2C6FB0C100F53B9A /* MapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewRepresentable.swift; sourceTree = "<group>"; };
+		4647010D2C6FB20500F53B9A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		464701102C6FB24D00F53B9A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		464701132C6FD0AF00F53B9A /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		464D7EE32C6B6CA6005FAAD5 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		464D7EE62C6B6D49005FAAD5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		464D7EE82C6B6DCF005FAAD5 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -107,6 +115,31 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4647010A2C6FB09D00F53B9A /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				4647010D2C6FB20500F53B9A /* MapView.swift */,
+				4647010B2C6FB0C100F53B9A /* MapViewRepresentable.swift */,
+				4647010F2C6FB21700F53B9A /* ViewModel */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		4647010F2C6FB21700F53B9A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		464701122C6FD08F00F53B9A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				464701132C6FD0AF00F53B9A /* SearchBarView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		464D7EE52C6B6D38005FAAD5 /* Authentication */ = {
@@ -200,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				464D7EF12C6B6FAB005FAAD5 /* HomeView.swift */,
+				4647010A2C6FB09D00F53B9A /* Map */,
 				46F473CE2C6941AF008ED2FD /* Registration */,
 			);
 			path = Core;
@@ -209,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				464D7EF42C6B7045005FAAD5 /* InputView.swift */,
+				464701122C6FD08F00F53B9A /* Components */,
 				464D7EF32C6B7031005FAAD5 /* Buttons */,
 			);
 			path = Subviews;
@@ -233,6 +268,7 @@
 		46F473CC2C69419B008ED2FD /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				464701102C6FB24D00F53B9A /* LocationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -411,12 +447,16 @@
 				464D7EE72C6B6D49005FAAD5 /* User.swift in Sources */,
 				464D7EEC2C6B6E6C005FAAD5 /* DBService.swift in Sources */,
 				464D7EF02C6B6EAD005FAAD5 /* RegistrationView.swift in Sources */,
+				4647010E2C6FB20500F53B9A /* MapView.swift in Sources */,
 				464D7EF72C6B70A8005FAAD5 /* FormIsValid.swift in Sources */,
 				467585C92C6B89C2007468AE /* RegistrationButton.swift in Sources */,
 				464D7EE42C6B6CA6005FAAD5 /* AuthenticationViewModel.swift in Sources */,
 				464D7EF22C6B6FAB005FAAD5 /* HomeView.swift in Sources */,
 				464D7EF52C6B7045005FAAD5 /* InputView.swift in Sources */,
+				464701142C6FD0AF00F53B9A /* SearchBarView.swift in Sources */,
+				464701112C6FB24D00F53B9A /* LocationManager.swift in Sources */,
 				46F4739F2C69414F008ED2FD /* PeppyApp.swift in Sources */,
+				4647010C2C6FB0C100F53B9A /* MapViewRepresentable.swift in Sources */,
 				464D7EE92C6B6DCF005FAAD5 /* RootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -580,6 +620,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Peppy/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow us to access your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -610,6 +653,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Peppy/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow us to access your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

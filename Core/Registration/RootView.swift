@@ -12,7 +12,7 @@ struct RootView: View {
     var body: some View {
         Group {
             if viewModel.userSession != nil {
-                HomeView()
+                MapView()
             } else {
                 LoginView()
             }
