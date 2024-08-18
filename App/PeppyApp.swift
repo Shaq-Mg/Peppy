@@ -20,11 +20,13 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct PeppyApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject private var authViewModel = AuthenticationViewModel()
+    @StateObject private var locationVM = LocationSearchViewModel()
     var body: some Scene {
         WindowGroup {
             NavigationStack {
                 RootView()
                     .environmentObject(authViewModel)
+                    .environmentObject(locationVM)
             }
         }
     }

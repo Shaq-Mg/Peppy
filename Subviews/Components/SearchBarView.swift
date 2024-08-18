@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SearchBarView: View {
-    @Binding var text: String
     let placeholder: String
     
     var body: some View {
@@ -17,36 +16,23 @@ struct SearchBarView: View {
                 .font(.system(size: 18, weight: .semibold))
                 .padding(.leading)
             
-            TextField(placeholder, text: $text)
+            Text(placeholder)
                 .font(.system(size: 18))
+                .foregroundStyle(.secondary)
                 .padding(.vertical)
-                .frame(maxWidth: .infinity)
                 .frame(height: 40)
+            Spacer()
         }
+        .frame(maxWidth: .infinity)
         .frame(width: 340)
         .background(.white)
         .cornerRadius(8)
         .shadow(radius: 5)
-        .overlay(alignment: .trailing) {
-            if !text.isEmpty {
-                withAnimation(.spring()) {
-                    Button {
-                        withAnimation(.spring()) {
-                            text = ""
-                        }
-                    } label: {
-                        Image(systemName: "xmark.circle")
-                            .foregroundStyle(.secondary)
-                            .padding(.trailing)
-                    }
-                }
-            }
-        }
     }
 }
 
 struct SearchBarView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBarView(text: .constant(""), placeholder: "Search")
+        SearchBarView(placeholder: "Search")
     }
 }

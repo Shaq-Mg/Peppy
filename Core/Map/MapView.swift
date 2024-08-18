@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct MapView: View {
-    @State private var text = ""
+    @State private var showLocationDetailView = false
     var body: some View {
-        ZStack(alignment: .top) {
-            MapViewRepresentable()
-                .ignoresSafeArea()
-            
-            SearchBarView(text: $text, placeholder: "Search destination...")
-                .padding(.top, 32)
+        ZStack(alignment: .bottom) {
+            ZStack(alignment: .top) {
+                MapViewRepresentable()
+                    .ignoresSafeArea()
+                
+                SearchBarView(placeholder: "Search destination..")
+                    .padding(.top, 32)
+            }
         }
     }
 }

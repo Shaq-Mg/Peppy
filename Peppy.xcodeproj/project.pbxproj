@@ -34,6 +34,10 @@
 		46F473D12C694256008ED2FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F473D02C694256008ED2FD /* GoogleService-Info.plist */; };
 		46F473D22C694256008ED2FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F473D02C694256008ED2FD /* GoogleService-Info.plist */; };
 		46F473D32C694256008ED2FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F473D02C694256008ED2FD /* GoogleService-Info.plist */; };
+		46F985BC2C7268CA0021D09C /* DestinationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F985BB2C7268CA0021D09C /* DestinationDetailView.swift */; };
+		46F985BE2C726A860021D09C /* SearchDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F985BD2C726A860021D09C /* SearchDestinationView.swift */; };
+		46F985C22C7275220021D09C /* LocationSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F985C12C7275220021D09C /* LocationSearchViewModel.swift */; };
+		46F985C42C7279690021D09C /* LocationSearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F985C32C7279690021D09C /* LocationSearchResultCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +83,10 @@
 		46F473B92C694150008ED2FD /* PeppyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeppyUITests.swift; sourceTree = "<group>"; };
 		46F473BB2C694150008ED2FD /* PeppyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeppyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		46F473D02C694256008ED2FD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		46F985BB2C7268CA0021D09C /* DestinationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationDetailView.swift; sourceTree = "<group>"; };
+		46F985BD2C726A860021D09C /* SearchDestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDestinationView.swift; sourceTree = "<group>"; };
+		46F985C12C7275220021D09C /* LocationSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchViewModel.swift; sourceTree = "<group>"; };
+		46F985C32C7279690021D09C /* LocationSearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchResultCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +128,8 @@
 		4647010A2C6FB09D00F53B9A /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				46F985BB2C7268CA0021D09C /* DestinationDetailView.swift */,
+				46F985BD2C726A860021D09C /* SearchDestinationView.swift */,
 				4647010D2C6FB20500F53B9A /* MapView.swift */,
 				4647010B2C6FB0C100F53B9A /* MapViewRepresentable.swift */,
 				4647010F2C6FB21700F53B9A /* ViewModel */,
@@ -130,6 +140,7 @@
 		4647010F2C6FB21700F53B9A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				46F985C12C7275220021D09C /* LocationSearchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -243,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				464D7EF42C6B7045005FAAD5 /* InputView.swift */,
+				46F985C32C7279690021D09C /* LocationSearchResultCell.swift */,
 				464701122C6FD08F00F53B9A /* Components */,
 				464D7EF32C6B7031005FAAD5 /* Buttons */,
 			);
@@ -445,11 +457,15 @@
 			files = (
 				464D7EEE2C6B6E98005FAAD5 /* LoginView.swift in Sources */,
 				464D7EE72C6B6D49005FAAD5 /* User.swift in Sources */,
+				46F985BE2C726A860021D09C /* SearchDestinationView.swift in Sources */,
 				464D7EEC2C6B6E6C005FAAD5 /* DBService.swift in Sources */,
 				464D7EF02C6B6EAD005FAAD5 /* RegistrationView.swift in Sources */,
 				4647010E2C6FB20500F53B9A /* MapView.swift in Sources */,
 				464D7EF72C6B70A8005FAAD5 /* FormIsValid.swift in Sources */,
+				46F985BC2C7268CA0021D09C /* DestinationDetailView.swift in Sources */,
+				46F985C42C7279690021D09C /* LocationSearchResultCell.swift in Sources */,
 				467585C92C6B89C2007468AE /* RegistrationButton.swift in Sources */,
+				46F985C22C7275220021D09C /* LocationSearchViewModel.swift in Sources */,
 				464D7EE42C6B6CA6005FAAD5 /* AuthenticationViewModel.swift in Sources */,
 				464D7EF22C6B6FAB005FAAD5 /* HomeView.swift in Sources */,
 				464D7EF52C6B7045005FAAD5 /* InputView.swift in Sources */,
