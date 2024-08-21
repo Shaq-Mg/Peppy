@@ -24,7 +24,7 @@ struct PeppyApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                RootView()
+                MapView()
                     .environmentObject(authViewModel)
                     .environmentObject(locationVM)
             }
