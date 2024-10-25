@@ -6,6 +6,16 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		46E178342CCBFE34000EBAFC /* PeppyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E178332CCBFE34000EBAFC /* PeppyApp.swift */; };
+		46E178362CCBFE34000EBAFC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E178352CCBFE34000EBAFC /* ContentView.swift */; };
+		46E178632CCBFF68000EBAFC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46E178622CCBFF68000EBAFC /* GoogleService-Info.plist */; };
+		46E178672CCBFFDD000EBAFC /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 46E178662CCBFFDD000EBAFC /* FirebaseAuth */; };
+		46E178692CCBFFE5000EBAFC /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 46E178682CCBFFE5000EBAFC /* FirebaseFirestore */; };
+		46E1786B2CCBFFEE000EBAFC /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 46E1786A2CCBFFEE000EBAFC /* FirebaseStorage */; };
+		46E1786D2CCBFFF7000EBAFC /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 46E1786C2CCBFFF7000EBAFC /* FirebaseCore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		46E178412CCBFE35000EBAFC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -25,8 +35,11 @@
 
 /* Begin PBXFileReference section */
 		46E178302CCBFE34000EBAFC /* Peppy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Peppy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		46E178332CCBFE34000EBAFC /* PeppyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeppyApp.swift; sourceTree = "<group>"; };
+		46E178352CCBFE34000EBAFC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		46E178402CCBFE35000EBAFC /* PeppyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeppyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		46E1784A2CCBFE35000EBAFC /* PeppyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeppyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		46E178622CCBFF68000EBAFC /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -52,6 +65,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46E178672CCBFFDD000EBAFC /* FirebaseAuth in Frameworks */,
+				46E178692CCBFFE5000EBAFC /* FirebaseFirestore in Frameworks */,
+				46E1786D2CCBFFF7000EBAFC /* FirebaseCore in Frameworks */,
+				46E1786B2CCBFFEE000EBAFC /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,9 +92,15 @@
 		46E178272CCBFE34000EBAFC = {
 			isa = PBXGroup;
 			children = (
+				46E1785D2CCBFE55000EBAFC /* App */,
+				46E178612CCBFE74000EBAFC /* Extensions */,
+				46E1785E2CCBFE5F000EBAFC /* Utilities */,
+				46E1785F2CCBFE67000EBAFC /* Subviews */,
+				46E178602CCBFE6D000EBAFC /* Core */,
 				46E178322CCBFE34000EBAFC /* Peppy */,
 				46E178432CCBFE35000EBAFC /* PeppyTests */,
 				46E1784D2CCBFE35000EBAFC /* PeppyUITests */,
+				46E178652CCBFFDD000EBAFC /* Frameworks */,
 				46E178312CCBFE34000EBAFC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +113,51 @@
 				46E1784A2CCBFE35000EBAFC /* PeppyUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		46E1785D2CCBFE55000EBAFC /* App */ = {
+			isa = PBXGroup;
+			children = (
+				46E178622CCBFF68000EBAFC /* GoogleService-Info.plist */,
+				46E178332CCBFE34000EBAFC /* PeppyApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		46E1785E2CCBFE5F000EBAFC /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		46E1785F2CCBFE67000EBAFC /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		46E178602CCBFE6D000EBAFC /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				46E178352CCBFE34000EBAFC /* ContentView.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		46E178612CCBFE74000EBAFC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		46E178652CCBFFDD000EBAFC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,6 +180,10 @@
 			);
 			name = Peppy;
 			packageProductDependencies = (
+				46E178662CCBFFDD000EBAFC /* FirebaseAuth */,
+				46E178682CCBFFE5000EBAFC /* FirebaseFirestore */,
+				46E1786A2CCBFFEE000EBAFC /* FirebaseStorage */,
+				46E1786C2CCBFFF7000EBAFC /* FirebaseCore */,
 			);
 			productName = Peppy;
 			productReference = 46E178302CCBFE34000EBAFC /* Peppy.app */;
@@ -195,6 +267,9 @@
 			);
 			mainGroup = 46E178272CCBFE34000EBAFC;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				46E178642CCBFFC6000EBAFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 46E178312CCBFE34000EBAFC /* Products */;
 			projectDirPath = "";
@@ -212,6 +287,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46E178632CCBFF68000EBAFC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +312,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46E178362CCBFE34000EBAFC /* ContentView.swift in Sources */,
+				46E178342CCBFE34000EBAFC /* PeppyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,6 +636,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		46E178642CCBFFC6000EBAFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		46E178662CCBFFDD000EBAFC /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 46E178642CCBFFC6000EBAFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		46E178682CCBFFE5000EBAFC /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 46E178642CCBFFC6000EBAFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		46E1786A2CCBFFEE000EBAFC /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 46E178642CCBFFC6000EBAFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		46E1786C2CCBFFF7000EBAFC /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 46E178642CCBFFC6000EBAFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 46E178282CCBFE34000EBAFC /* Project object */;
 }
