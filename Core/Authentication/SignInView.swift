@@ -21,7 +21,9 @@ struct SignInView: View {
                     .font(.callout)
                 
                 RegistrationButtonView(title: "Sign In") {
-                    
+                    Task {
+                        try await authVM.signIn(withEmail: authVM.email, password: authVM.password)
+                    }
                 }
                 .padding(.top, 44)
                 

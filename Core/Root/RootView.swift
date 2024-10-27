@@ -8,11 +8,21 @@
 import SwiftUI
 
 struct RootView: View {
+    @EnvironmentObject var authVM: AuthenticationViewModel
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Group {
+            if authVM.userSession != nil {
+                SettingsView()
+            } else {
+                SignInView()
+            }
+        }
     }
 }
 
 #Preview {
-    RootView()
+    NavigationStack {
+        RootView()
+            .environmentObject(AuthenticationViewModel())
+    }
 }

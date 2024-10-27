@@ -11,6 +11,7 @@
 		467550052CCC37D000687DE0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467550042CCC37D000687DE0 /* SettingsView.swift */; };
 		467550082CCC3D7F00687DE0 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467550072CCC3D7F00687DE0 /* Pet.swift */; };
 		4675500A2CCC401400687DE0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467550092CCC401400687DE0 /* User.swift */; };
+		46841FBF2CCEA17E003EBA41 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46841FBE2CCEA17E003EBA41 /* RootView.swift */; };
 		46DA04A42CCC191E009D1C38 /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DA04A32CCC191E009D1C38 /* CreateAccountView.swift */; };
 		46E178342CCBFE34000EBAFC /* PeppyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E178332CCBFE34000EBAFC /* PeppyApp.swift */; };
 		46E178632CCBFF68000EBAFC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46E178622CCBFF68000EBAFC /* GoogleService-Info.plist */; };
@@ -46,6 +47,7 @@
 		467550042CCC37D000687DE0 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		467550072CCC3D7F00687DE0 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		467550092CCC401400687DE0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		46841FBE2CCEA17E003EBA41 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		46DA04A32CCC191E009D1C38 /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
 		46E178302CCBFE34000EBAFC /* Peppy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Peppy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46E178332CCBFE34000EBAFC /* PeppyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeppyApp.swift; sourceTree = "<group>"; };
@@ -122,6 +124,14 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		46841FC02CCEA183003EBA41 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				46841FBE2CCEA17E003EBA41 /* RootView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
 		46E178272CCBFE34000EBAFC = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +188,7 @@
 		46E178602CCBFE6D000EBAFC /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				46841FC02CCEA183003EBA41 /* Root */,
 				46E1786E2CCC0F65000EBAFC /* Authentication */,
 			);
 			path = Core;
@@ -394,6 +405,7 @@
 				46E1787B2CCC14BE000EBAFC /* RegistrationButtonView.swift in Sources */,
 				4675500A2CCC401400687DE0 /* User.swift in Sources */,
 				46E178342CCBFE34000EBAFC /* PeppyApp.swift in Sources */,
+				46841FBF2CCEA17E003EBA41 /* RootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
