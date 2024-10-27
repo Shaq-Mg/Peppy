@@ -8,11 +8,24 @@
 import SwiftUI
 
 struct SettingsCellView: View {
+    let imageName: String
+    let title: String
+    let tintColor: Color = .accentColor
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack(spacing: 12) {
+            Image(systemName: imageName)
+                .imageScale(.small)
+                .font(.title)
+                .foregroundStyle(tintColor)
+            
+            Text(title)
+                .font(.headline)
+                .foregroundStyle(.black)
+        }
     }
 }
 
 #Preview {
-    SettingsCellView()
+    SettingsCellView(imageName: "gear", title: "Settings")
 }

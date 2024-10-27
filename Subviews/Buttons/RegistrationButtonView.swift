@@ -8,11 +8,21 @@
 import SwiftUI
 
 struct RegistrationButtonView: View {
+    let title: String
+    let isPressed: () -> ()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button(title) {
+            isPressed()
+        }
+        .font(.system(size: 18, weight: .bold))
+        .foregroundStyle(.white)
+        .frame(width: UIScreen.main.bounds.width - 32, height: 44)
+        .background(Color("AccentColor"))
+        .clipShape(RoundedRectangle(cornerRadius: 10))
     }
 }
 
 #Preview {
-    RegistrationButtonView()
+    RegistrationButtonView(title: "Sign In") { }
 }

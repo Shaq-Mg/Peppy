@@ -11,9 +11,14 @@ import FirebaseCore
 @main
 struct PeppyApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @StateObject private var authVM = AuthenticationViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                SignInView()
+                    .environmentObject(authVM)
+            }
         }
     }
 }

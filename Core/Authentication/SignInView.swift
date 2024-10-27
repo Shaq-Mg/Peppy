@@ -8,11 +8,42 @@
 import SwiftUI
 
 struct SignInView: View {
+    @EnvironmentObject var authVM: AuthenticationViewModel
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            VStack(spacing: 24) {
+                InputView(text: $authVM.email, title: "Email Address", placeholder: "Email")
+                    .textInputAutocapitalization(.none)
+                InputView(text: $authVM.password, title: "Password", placeholder: "Password", isSecureField: true)
+                    .keyboardType(.numberPad)
+                
+                Text(authVM.errorMessage)
+                    .font(.callout)
+                
+                RegistrationButtonView(title: "Sign In") {
+                    
+                }
+                .padding(.top, 44)
+                
+                NavigationLink(destination: {
+                    CreateAccountView()
+                        .navigationBarBackButtonHidden(true)
+                }, label: {
+                    Text("Don't have an account?")
+                    Text("Sign Up")
+                        .bold()
+                })
+                .foregroundStyle(.black)
+            }
+            .padding(.horizontal)
+            .navigationTitle("Sign In")
+        }
     }
 }
 
 #Preview {
-    SignInView()
+    NavigationStack {
+        SignInView()
+            .environmentObject(AuthenticationViewModel())
+    }
 }
