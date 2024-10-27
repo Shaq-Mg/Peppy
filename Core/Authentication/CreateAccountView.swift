@@ -10,6 +10,7 @@ import SwiftUI
 struct CreateAccountView: View {
     @EnvironmentObject var authVM: AuthenticationViewModel
     @Environment(\.dismiss) private var dismiss
+    
     var body: some View {
         NavigationStack {
             VStack(spacing: 24) {

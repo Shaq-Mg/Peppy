@@ -188,8 +188,8 @@
 		46E178602CCBFE6D000EBAFC /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				46841FC02CCEA183003EBA41 /* Root */,
 				46E1786E2CCC0F65000EBAFC /* Authentication */,
+				46841FC02CCEA183003EBA41 /* Root */,
 			);
 			path = Core;
 			sourceTree = "<group>";

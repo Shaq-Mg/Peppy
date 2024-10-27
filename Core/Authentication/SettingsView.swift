@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @EnvironmentObject var authVM: AuthenticationViewModel
     var body: some View {
         List {
             Section {
@@ -32,7 +33,7 @@ struct SettingsView: View {
                 }
                 
                 Button {
-                    
+                    authVM.signOut()
                 } label: {
                     SettingsCellView(imageName: "minus.circle.fill", title: "Delete Account")
                 }
@@ -45,13 +46,14 @@ struct SettingsView: View {
 #Preview {
     NavigationStack {
         SettingsView()
+            .environmentObject(AuthenticationViewModel())
     }
 }
 
 extension SettingsView {
     private var profileHeader: some View {
         HStack {
-            Text(User.mock_user.firstLetter)
+            Text(authVM.currentUser?.firstLetter ?? "U")
                 .font(.title)
                 .fontWeight(.semibold)
                 .foregroundStyle(.white)
@@ -60,14 +62,14 @@ extension SettingsView {
                 .clipShape(Circle())
             
             VStack(alignment: .leading, spacing: 4) {
-                Text("Kobe Bryant")
+                Text(authVM.currentUser?.name ?? "User")
                     .font(.subheadline)
-                    .fontWeight(.semibold)
+                    .fontWeight(.bold)
                     .padding(.top, 4)
                 
-                Text("kobe@gmail.com")
+                Text(authVM.currentUser?.email ?? "user@gmail.com")
                     .font(.footnote)
-                    .fontWeight(.bold)
+                    .fontWeight(.semibold)
                     .tint(.gray)
             }
         }
